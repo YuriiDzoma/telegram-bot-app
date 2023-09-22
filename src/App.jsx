@@ -1,5 +1,6 @@
 import './App.css';
-import {useEffect} from "react";
+import React, {useEffect} from "react";
+import Header from "./components/Header/Header";
 
 const App = () => {
     const telegram = window.Telegram.WebApp;
@@ -8,16 +9,14 @@ const App = () => {
         telegram.ready();
     }, [])
 
-    const closeTelegram = () => {
-        telegram.close();
-    }
+    return (
 
-  return (
+        <div>
+            <p>TELEGRAM TEST APP</p>
 
-      <div>
-          <button onClick={closeTelegram}>Закрити</button>
-      </div>
-  )
+            <Header />
+        </div>
+    )
 }
 
 export default App;
