@@ -15,7 +15,7 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!country || !street || !subject) {
+        if(!country || !street) {
             telegram.MainButton.hide();
         } else {
             telegram.MainButton.show()
