@@ -3,7 +3,7 @@ import React, {useEffect} from "react";
 import Header from "./components/Header/Header";
 import './App.css';
 import {useTelegram} from "./hooks/useTelegram";
-import {Routes, Route} from "react-router-dom"
+import {Routes, Route, Link} from "react-router-dom"
 import ProductList from "./components/ProductList/ProductList";
 import Form from "./components/Form/Form";
 
@@ -18,6 +18,10 @@ const App = () => {
 
         <div className={'App'}>
             <p>TELEGRAM APP</p>
+            <Link className={'link'}
+                to={`form/`}>
+                setting
+            </Link>
 
             <Header />
             <Routes>
