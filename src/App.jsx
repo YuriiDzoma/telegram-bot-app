@@ -17,7 +17,7 @@ const App = () => {
     return (
 
         <div className={'App'}>
-            <p>TELEGRAM APP</p>
+            <p className={'wallet-title'}>Wallet</p>
             <Link className={'link'}
                 to={`form/`}>
                 setting

@@ -12,3 +12,9 @@ body {
 .link {
   color: var(--tg-theme-link-color);
 }
+
+.wallet-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
