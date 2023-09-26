@@ -17,7 +17,7 @@ const App = () => {
     return (
 
         <div className={'App'}>
-            <p>TELEGRAM TEST APP</p>
+            <p>TELEGRAM TEST</p>
 
             <Header />
             <Routes>
