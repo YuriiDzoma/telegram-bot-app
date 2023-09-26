@@ -16,11 +16,11 @@ const Form = () => {
 
     useEffect(() => {
         if(!country || !street) {
-            telegram.MainButton.hide();
+            console.log('NOT')
         } else {
-            telegram.MainButton.show()
+            console.log('YES')
         }
-    }, [])
+    }, [country, street])
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value);
