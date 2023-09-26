@@ -14,14 +14,18 @@ const App = () => {
         telegram.ready();
     }, [])
 
-    return (
+    const theme = telegram.colorScheme;
 
+
+    return (
         <div className={'App'}>
             <p className={'wallet-title'}>Wallet</p>
             <Link className={'link'}
                 to={`form/`}>
                 setting
             </Link>
+
+            <p>{theme}</p>
 
             <Header />
             <Routes>
