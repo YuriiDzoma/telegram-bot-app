@@ -9,7 +9,6 @@ const CardsList = () => {
 
     const allCards = useSelector(getCards);
 
-
     return (
         <div>
             <Swiper
