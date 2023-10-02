@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const CardsList = () => {
 
-    const allCards = useSelector(state => state.wallet.cards);
+
 
     return (
         <div>
