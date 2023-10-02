@@ -8,7 +8,6 @@ const Content = () => {
         <div>
             <Balance />
             <CardsList />
-            <span>TEST</span>
         </div>
 
     )

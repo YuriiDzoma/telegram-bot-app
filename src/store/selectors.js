@@ -1,3 +1,3 @@
 
 
-export const getCards = (state) => state.wallet.cards;
+// export const getCards = (state) => state.wallet.cards;
