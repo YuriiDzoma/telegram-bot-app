@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {getCards} from "../../../store/selectors";
-import CardBox from "./Cardbox/CardBox";
+import styles from './CardList.module.scss'
 
 const CardsList = () => {
 
@@ -18,15 +18,29 @@ const CardsList = () => {
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
-                {allCards.map((card, index) =><SwiperSlide key={index}>
-                    <CardBox
-                        value={card.cardValue}
-                        number={card.cardNumber}
-                        code={card.cardCode}
-                        date={card.cardDate}
-                        type={card.cardType}
-                    />
-                </SwiperSlide>)}
+                {allCards.map((card, index) => (
+                    <SwiperSlide key={index}>
+                        <div className={styles.card}>
+                            <div className={styles.cardSettings}>
+                                <button>O</button>
+                            </div>
+                            <p className={styles.cardValue}>
+                                <span className={styles.cardValue__current}>{card.value} </span>
+                                /
+                                <span className={styles.cardValue__limit}> 5000</span>
+                            </p>
+                            <div className={styles.cardNumber}>
+                                <p>{card.number}</p>
+                                <p>{card.code}</p>
+                            </div>
+                            <div className={styles.cardDate}>
+                                <p>{card.date}</p>
+                                <p>{card.type}</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    )
+                )}
             </Swiper>
         </div>
     )
