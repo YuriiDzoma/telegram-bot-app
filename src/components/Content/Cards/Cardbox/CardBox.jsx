@@ -1,5 +1,4 @@
 import React from "react";
-import styles from './CardBox.module.scss'
 
 const cardBox = {
     padding: '16px',
