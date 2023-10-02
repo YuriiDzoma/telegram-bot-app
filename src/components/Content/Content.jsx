@@ -7,7 +7,7 @@ const Content = () => {
     return (
         <div>
             <Balance />
-            <CardsList />
+            {/*<CardsList />*/}
         </div>
 
     )
