@@ -9,20 +9,7 @@ const CardsList = () => {
 
     return (
         <div>
-            {allCards && (
-                // <Swiper
-                //     spaceBetween={50}
-                //     slidesPerView={1.2}
-                // >
-                //     {allCards && (
-                //         <>
-                //             {/*{allCards.map((card, index) => <SwiperSlide key={index}><Card card={card} /></SwiperSlide>)}*/}
-                //             <SwiperSlide>TEST</SwiperSlide>)
-                //         </>
-                //     )}
-                // </Swiper>
-                <div>TEST</div>
-            )}
+            TEST
         </div>
     )
 }
