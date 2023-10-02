@@ -12,6 +12,8 @@ const cardSettings = {
     display: 'flex',
     justifyContent: 'end',
     marginBottom: '8px',
+}
+const icon = {
     height: '16px',
     width: '16px',
 }
@@ -47,7 +49,7 @@ const CardBox = ({value, number, code, date, type}) => {
     return (
         <div style={cardBox}>
             <div style={cardSettings}>
-                <button>O</button>
+                <button style={icon}>O</button>
             </div>
             <div style={cardValue}>
                 <span style={current}>{value} </span>
