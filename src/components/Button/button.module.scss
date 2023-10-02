@@ -36,7 +36,7 @@
     }
 }
 
-.back {
+.backDark, .backLight {
     position: relative;
     width: 24px;
     height: 24px;
@@ -49,8 +49,16 @@
         height: 6px;
         left: 50%;
         top: 50%;
-        border-bottom: 1px solid #fff;
-        border-left: 1px solid #fff;
         transform: translateY(-50%) rotateZ(45deg) translateX(-50%);
     }
+}
+
+.backDark:before {
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.backLight:before {
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
 }

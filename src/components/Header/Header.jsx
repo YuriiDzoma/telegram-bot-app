@@ -3,7 +3,7 @@ import styles from './Header.module.scss'
 import {useTelegram} from "../../hooks/useTelegram";
 import Back from "../Button/Back";
 
-const Header = () => {
+const Header = ({theme}) => {
 
     const {closeTelegram, user} = useTelegram();
 
@@ -11,7 +11,9 @@ const Header = () => {
         <div className={styles.header}>
             <Back />
             <p className={styles.walletTitle}>Wallet</p>
-            <button>option</button>
+            <button className={theme === 'dark' ? styles.buttonOptionDark : styles.buttonOptionLight}>
+                <span className={styles.dots}/>
+            </button>
 
             {/*<Button onClick={closeTelegram}>Закрити</Button>*/}
             {/*<span className={'username'}>{user?.username}</span>*/}

@@ -7,7 +7,7 @@ const Balance = () => {
     const [balance, setBalance] = useState(0);
 
     return (
-        <div>
+        <div className={styles.contentWrapper}>
             <h2 className={styles.balance}>USDT {balance}</h2>
             <Button plus={true}>
                 <span>Replenish</span>

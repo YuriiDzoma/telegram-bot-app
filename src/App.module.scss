@@ -4,24 +4,31 @@
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--tg-theme-secondary-bg-color);
   color: var(--tg-theme-text-color);
 }
 
-.walletWrapper {
+.walletWrapperDark, .walletWrapperLight {
   padding: 16px;
+}
 
-  &.dark {
-    p, span, .walletTitle {
-      color: #fff
-    }
+.walletWrapperDark {
+  p, span, .walletTitle {
+    color: #fff
   }
+}
 
-  &.light {
-    p, span, .walletTitle {
-      color: #000
-    }
+.walletWrapperLight {
+  p, span, .walletTitle {
+    color: #000
   }
 }
 
