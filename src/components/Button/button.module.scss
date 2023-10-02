@@ -1,0 +1,27 @@
+.button {
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: var(--tg-theme-button-text-color);
+    background: var(--tg-theme-button-color);
+}
+
+.back {
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 6px;
+        height: 6px;
+        left: 50%;
+        top: 50%;
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #fff;
+        transform: translateY(-50%) rotateZ(45deg) translateX(-50%);
+    }
+}

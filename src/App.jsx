@@ -19,13 +19,14 @@ const App = () => {
 
     return (
         <div className={`wallet-wrapper ${theme}`}>
-            <p className={'wallet-title'}>Wallet</p>
-            <Link className={'link'}
-                to={`form/`}>
-                setting
-            </Link>
-
             <Header />
+
+            {/*<Link className={'link'}*/}
+            {/*    to={`form/`}>*/}
+            {/*    setting*/}
+            {/*</Link>*/}
+
+
             <Routes>
                 <Route index element={<ProductList />} />
                 <Route path={'form'} element={<Form />} />
