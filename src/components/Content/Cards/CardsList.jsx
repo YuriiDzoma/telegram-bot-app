@@ -26,7 +26,7 @@ const CardsList = () => {
                 >
                     {allCards && (
                         <>
-                            {allCards.map((card, index) => <SwiperSlide><Card key={index} card={card} /></SwiperSlide>)}
+                            {allCards.map((card, index) => <SwiperSlide key={index}><Card card={card} /></SwiperSlide>)}
                         </>
                     )}
                 </Swiper>
