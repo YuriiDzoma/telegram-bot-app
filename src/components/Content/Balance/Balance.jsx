@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from './Balance.module.scss';
 import Button from "../../Button/Button";
+import {useTelegram} from "../../../hooks/useTelegram";
 
 const Balance = () => {
-    const {telegram, onToggleButton} = useTelegram();
+    const {telegram} = useTelegram();
 
     useEffect(() => {
         telegram.ready();
