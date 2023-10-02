@@ -1,37 +1,62 @@
 import React from "react";
+import styles from './CardBox.module.scss'
 
-const myStyle = {
-    color: "white",
-    backgroundColor: "DodgerBlue",
-    padding: "10px",
-};
+const cardBox = {
+    padding: '16px',
+    backgroundColor: '#3E4449',
+    boxShadow: '0 0 13px 0 #0C0B0B26',
+    marginTop: '16px',
+}
+const cardSettings = {
+    display: 'flex',
+    justifyContent: 'end',
+    marginBottom: '8px',
+}
+const cardValue = {
+    fontSize: '22px',
+    fontWeight: '600',
+    color: '#CED0D6',
+    marginBottom: '16px',
+}
+const current = {
+    color: '#FD2222'
+}
+const limit = {
+    color: '#1ABA2A'
+}
+const cardNumber = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginBottom: '16px'
+}
+const cardDate = {
+    display: 'flex',
+    justifyContent: 'space-between'
+}
+const text = {
+    fontSize: '14px',
+    color: '#CED0D6'
+}
 
 const CardBox = ({value, number, code, date, type}) => {
 
-    const cardBox = {
-        padding: '16px',
-        backgroundColor: '#3E4449',
-        boxShadow: '0 0 13px 0 #0C0B0B26',
-        marginTop: '16px',
-    }
-
     return (
         <div style={cardBox}>
-            <div>
+            <div style={cardSettings}>
                 <button>O</button>
             </div>
-            <p>
-                <span>{value} </span>
+            <div style={cardValue}>
+                <span style={current}>{value} </span>
                 /
-                <span> 5000</span>
-            </p>
-            <div>
-                <p>{number}</p>
-                <p>{code}</p>
+                <span style={limit}> 5000</span>
             </div>
-            <div>
-                <p>{date}</p>
-                <p>{type}</p>
+            <div style={cardNumber}>
+                <p style={text}>{number}</p>
+                <p style={text}>{code}</p>
+            </div>
+            <div style={cardDate}>
+                <p style={text}>{date}</p>
+                <p style={text}>{type}</p>
             </div>
         </div>
     )
