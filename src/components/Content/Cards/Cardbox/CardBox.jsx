@@ -5,11 +5,15 @@ const cardBox = {
     backgroundColor: '#3E4449',
     boxShadow: '0 0 13px 0 #0C0B0B26',
     marginTop: '16px',
+    borderRadius: '16px',
+    border: 'Mixed solid #2F353C'
 }
 const cardSettings = {
     display: 'flex',
     justifyContent: 'end',
     marginBottom: '8px',
+    height: '16px',
+    width: '16px',
 }
 const cardValue = {
     fontSize: '22px',
@@ -30,7 +34,8 @@ const cardNumber = {
 }
 const cardDate = {
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    height: '31px'
 }
 const text = {
     fontSize: '14px',

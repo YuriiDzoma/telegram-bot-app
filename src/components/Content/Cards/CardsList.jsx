@@ -12,8 +12,8 @@ const CardsList = () => {
     return (
         <div>
             <Swiper
-                spaceBetween={50}
-                slidesPerView={1.2}
+                spaceBetween={8}
+                slidesPerView={1.07}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
