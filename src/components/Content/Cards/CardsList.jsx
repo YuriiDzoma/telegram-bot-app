@@ -1,6 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import Card from "./Card";
+
 
 const CardsList = () => {
 
@@ -8,7 +8,7 @@ const CardsList = () => {
 
     return (
         <div>
-            {allCards.map((card, index) => <Card key={index} card={card} /> )}
+            {allCards.map((card, index) => <p key={index}>{card.cardValue}</p> )}
         </div>
     )
 }
