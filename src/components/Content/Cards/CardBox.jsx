@@ -8,11 +8,7 @@ const CardBox = ({value, number, code, date, type}) => {
             <div className={styles.cardSettings}>
                 <button>O</button>
             </div>
-            <p className={styles.cardValue}>
-                <span className={styles.cardValue__current}>{value} </span>
-                /
-                <span className={styles.cardValue__limit}> 5000</span>
-            </p>
+
             <div className={styles.cardNumber}>
                 <p>{number}</p>
                 <p>{code}</p>
