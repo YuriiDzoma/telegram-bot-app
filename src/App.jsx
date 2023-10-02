@@ -1,11 +1,11 @@
-import './App.css';
+import './App.module.scss';
 import React, {useEffect} from "react";
 import Header from "./components/Header/Header";
-import './App.css';
+import './App.module.scss';
 import {useTelegram} from "./hooks/useTelegram";
 import {Routes, Route, Link} from "react-router-dom"
-import ProductList from "./components/ProductList/ProductList";
 import Form from "./components/Form/Form";
+import Content from "./components/Content/Content";
 
 const App = () => {
     const {telegram, onToggleButton} = useTelegram();
@@ -28,7 +28,7 @@ const App = () => {
 
 
             <Routes>
-                <Route index element={<ProductList />} />
+                <Route index element={<Content />} />
                 <Route path={'form'} element={<Form />} />
             </Routes>
         </div>

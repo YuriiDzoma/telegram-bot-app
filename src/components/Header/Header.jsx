@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../Button/Button";
 import styles from './Header.module.scss'
 import {useTelegram} from "../../hooks/useTelegram";
 import Back from "../Button/Back";
@@ -11,7 +10,7 @@ const Header = () => {
     return (
         <div className={styles.header}>
             <Back />
-            <p className={'wallet-title'}>Wallet</p>
+            <p className={styles.walletTitle}>Wallet</p>
             <button>option</button>
 
             {/*<Button onClick={closeTelegram}>Закрити</Button>*/}

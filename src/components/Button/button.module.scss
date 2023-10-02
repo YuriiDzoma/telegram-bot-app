@@ -1,10 +1,39 @@
-.button {
-    padding: 10px 15px;
+.button, .buttonPlus {
+    width: 132px;
+    height: 40px;
     cursor: pointer;
     outline: none;
     border: none;
-    color: var(--tg-theme-button-text-color);
-    background: var(--tg-theme-button-color);
+    //color: var(--tg-theme-button-text-color);
+    //background: var(--tg-theme-button-color);
+    background-color: #017DEC;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 60px;
+}
+
+.buttonPlus {
+    span {
+        padding-left: 22px;
+        position: relative;
+
+        &:before, &:after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 14px;
+            height: 2px;
+            border-radius: 60px;
+            background-color: #fff;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        &:after {
+            transform: translateY(-50%) rotateZ(90deg);
+        }
+    }
 }
 
 .back {
