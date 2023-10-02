@@ -4,7 +4,7 @@ import Button from "../../Button/Button";
 
 const Balance = () => {
 
-    const [balance, setBalance] = useState(0);
+    const [balance, setBalance] = useState(293);
 
     return (
         <div className={styles.contentWrapper}>

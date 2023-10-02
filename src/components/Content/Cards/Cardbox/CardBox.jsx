@@ -52,7 +52,7 @@ const CardBox = ({value, number, code, date, type}) => {
                 <button style={icon}>O</button>
             </div>
             <div style={cardValue}>
-                <span style={current}>{value} </span>
+                <span style={current}>$ {value} </span>
                 /
                 <span style={limit}> 5000</span>
             </div>
