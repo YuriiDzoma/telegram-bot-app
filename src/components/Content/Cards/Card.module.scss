@@ -1,0 +1,41 @@
+.card {
+  padding: 16px;
+  background-color: #3E4449;
+  box-shadow: 0 0 13px 0 #0C0B0B26;
+  margin-top: 16px;
+}
+
+.cardSettings {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 8px;
+}
+
+.cardValue {
+  font-size: 22px;
+  font-weight: 600;
+  color: #CED0D6 !important;
+  margin-bottom: 16px;
+
+  &__current {
+    color: #FD2222 !important;
+  }
+
+  &__limit {
+    color: #1ABA2A !important;
+  }
+}
+
+.cardNumber, .cardDate {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    font-size: 14px;
+    color: #CED0D6 !important;
+  }
+}
+
+.cardNumber {
+  margin-bottom: 16px;
+}
