@@ -9,13 +9,33 @@ body {
   color: var(--tg-theme-text-color);
 }
 
-.link {
-  color: var(--tg-theme-link-color);
-}
-
 .wallet-title {
   text-align: center;
   font-size: 20px;
   font-weight: 700;
+}
+
+.wallet-title.dark {
   color: #fff;
 }
+
+.wallet-title.light {
+  color: #000;
+}
+
+.wallet-wrapper.dark .wallet-title,
+.wallet-wrapper.dark p,
+.wallet-wrapper.dark span {
+  color: #fff
+}
+
+.wallet-wrapper.light .wallet-title,
+.wallet-wrapper.light p,
+.wallet-wrapper.light span {
+  color: #000
+}
+
+.link {
+  color: var(--tg-theme-link-color);
+}
+

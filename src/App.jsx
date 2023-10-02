@@ -18,14 +18,12 @@ const App = () => {
 
 
     return (
-        <div className={'App'}>
+        <div className={`wallet-wrapper ${theme}`}>
             <p className={'wallet-title'}>Wallet</p>
             <Link className={'link'}
                 to={`form/`}>
                 setting
             </Link>
-
-            <p>{theme}</p>
 
             <Header />
             <Routes>
