@@ -1,7 +1,7 @@
 import './App.module.scss';
 import React, {useEffect} from "react";
 import Header from "./components/Header/Header";
-import './App.module.scss';
+import styles from './App.module.scss';
 import {useTelegram} from "./hooks/useTelegram";
 import {Routes, Route, Link} from "react-router-dom"
 import Form from "./components/Form/Form";
@@ -15,10 +15,10 @@ const App = () => {
     }, [])
 
     const theme = telegram.colorScheme;
-
+    const classes = theme === "dark" ? 'walletWrapper dark' : 'walletWrapper light'
 
     return (
-        <div className={`wallet-wrapper ${theme}`}>
+        <div className={classes}>
             <Header />
 
             {/*<Link className={'link'}*/}

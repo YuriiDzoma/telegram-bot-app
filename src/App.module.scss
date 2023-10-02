@@ -9,25 +9,17 @@ body {
   color: var(--tg-theme-text-color);
 }
 
-.wallet-title.dark {
-  color: #fff;
-}
-
-.wallet-title.light {
-  color: #000;
-}
-
-.wallet-wrapper {
+.walletWrapper {
   padding: 16px;
 
   &.dark {
-    p, span, .wallet-title {
+    p, span, .walletTitle {
       color: #fff
     }
   }
 
   &.light {
-    p, span, .wallet-title {
+    p, span, .walletTitle {
       color: #000
     }
   }
