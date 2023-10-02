@@ -20,12 +20,9 @@ const CardsList = () => {
         <div>
             {allCards && (
                 <Swiper
-                    // install Swiper modules
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={50}
                     slidesPerView={1.2}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
                 >
                     {allCards && (
                         <>
