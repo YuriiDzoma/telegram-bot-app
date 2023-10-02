@@ -1,10 +1,12 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/css';
+import {getCards} from "../../../store/selectors";
 
 const CardsList = () => {
 
-    const allCards = useSelector(state => state.wallet.cards);
+    const allCards = useSelector(getCards);
 
 
     return (
@@ -13,7 +15,7 @@ const CardsList = () => {
 
             <Swiper
                 spaceBetween={50}
-                slidesPerView={3}
+                slidesPerView={1.2}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
