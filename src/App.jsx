@@ -15,10 +15,9 @@ const App = () => {
     }, [])
 
     const theme = telegram.colorScheme;
-    const classes = theme === "dark" ? 'walletWrapper dark' : 'walletWrapper light'
 
     return (
-        <div className={classes}>
+        <div className={`${styles.walletWrapper} ${theme}`}>
             <Header />
 
             {/*<Link className={'link'}*/}
