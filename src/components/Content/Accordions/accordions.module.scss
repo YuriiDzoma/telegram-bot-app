@@ -5,26 +5,26 @@
 }
 
 .item {
-  background-color: rgb(62, 68, 73);
-  color: #fff;
+  background-color: rgb(62, 68, 73) !important;
+  color: #fff !important;
   border-bottom-left-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
 
   svg {
-    color: #fff;
+    color: #fff !important;
   }
 }
 
 .title {
   div p {
-    color: #fff;
+    color: #fff !important;
   }
 }
 
 .details {
   p {
-    color: #fff;
+    color: #fff !important;
   }
 }
