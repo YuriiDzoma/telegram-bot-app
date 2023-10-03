@@ -6,6 +6,10 @@ import {useTelegram} from "./hooks/useTelegram";
 import {Routes, Route, Link} from "react-router-dom"
 import Form from "./components/Form/Form";
 import Content from "./components/Content/Content";
+import Exchange from "./components/Exchange/Exchange";
+import Replenish from "./components/Replenish/Replenish";
+import LimitOrders from "./components/LimitOrders/LimitOrders";
+import Send from "./components/Send/Send";
 
 const App = () => {
     const {telegram, onToggleButton} = useTelegram();
@@ -28,7 +32,10 @@ const App = () => {
 
             <Routes>
                 <Route index element={<Content />} />
-                <Route path={'form'} element={<Form />} />
+                <Route path={'/replenish/*'} element={<Replenish />} />
+                <Route path={'/limit_orders/*'} element={<LimitOrders />} />
+                <Route path={'/exchange/*'} element={<Exchange />} />
+                <Route path={'/send/*'} element={<Send />} />
             </Routes>
         </div>
     )
