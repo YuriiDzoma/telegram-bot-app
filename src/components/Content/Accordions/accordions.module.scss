@@ -1,0 +1,30 @@
+.accordions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.item {
+  background-color: rgb(62, 68, 73);
+  color: #fff;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+
+  svg {
+    color: #fff;
+  }
+}
+
+.title {
+  div p {
+    color: #fff;
+  }
+}
+
+.details {
+  p {
+    color: #fff;
+  }
+}

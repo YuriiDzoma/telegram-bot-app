@@ -3,6 +3,7 @@ import React from "react";
 import Balance from "./Balance/Balance";
 import CardsList from "./Cards/CardsList";
 import Links from "./Links/Links";
+import Accordions from "./Accordions/Accordions";
 
 const Content = () => {
     return (
@@ -10,6 +11,7 @@ const Content = () => {
             <Balance />
             <CardsList />
             <Links />
+            <Accordions />
         </div>
     )
 }
