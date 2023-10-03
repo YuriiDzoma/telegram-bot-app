@@ -14,8 +14,8 @@ const CardsList = () => {
             <Swiper
                 spaceBetween={8}
                 slidesPerView={1.07}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log('slide change')}
+                // onSwiper={(swiper) => console.log(swiper)}
             >
                 {allCards.map((card, index) =><SwiperSlide key={index}>
                     <CardBox

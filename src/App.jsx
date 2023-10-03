@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import styles from './App.module.scss';
 import {useTelegram} from "./hooks/useTelegram";
 import {Routes, Route, Link} from "react-router-dom"
-import Form from "./components/Form/Form";
 import Content from "./components/Content/Content";
 import Exchange from "./components/Exchange/Exchange";
 import Replenish from "./components/Replenish/Replenish";
