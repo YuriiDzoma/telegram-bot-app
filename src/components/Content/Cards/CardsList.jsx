@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {getCards} from "../../../store/selectors";
-import CardBox from "./Cardbox/CardBox";
+import CardBox from "./Card/Card";
 
 const CardsList = () => {
 

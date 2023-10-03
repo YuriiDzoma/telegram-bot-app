@@ -1,6 +1,6 @@
 import React from "react";
 
-const cardBox = {
+const card = {
     padding: '16px',
     backgroundColor: '#3E4449',
     boxShadow: '0 0 13px 0 #0C0B0B26',
@@ -47,7 +47,7 @@ const text = {
 const CardBox = ({value, number, code, date, type}) => {
 
     return (
-        <div style={cardBox}>
+        <div style={card}>
             <div style={cardSettings}>
                 <button style={icon}>O</button>
             </div>
