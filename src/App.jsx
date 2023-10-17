@@ -17,7 +17,8 @@ const App = () => {
         telegram.ready();
     }, [])
 
-    const theme = telegram.colorScheme;
+    // const theme = telegram.colorScheme;
+    const theme = 'dark';
 
     return (
         <div className={theme === 'dark' ? styles.walletWrapperDark : styles.walletWrapperLight}>
