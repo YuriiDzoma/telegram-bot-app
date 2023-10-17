@@ -3,10 +3,11 @@ import React from "react";
 const card = {
     padding: '16px',
     backgroundColor: '#3E4449',
-    boxShadow: '0 0 13px 0 #0C0B0B26',
     marginTop: '16px',
     borderRadius: '16px',
-    border: 'Mixed solid #2F353C'
+    border: 'Mixed solid #2F353C',
+    boxShadow: '0px 0px 15px 0px #0C0B0B73',
+
 }
 const cardSettings = {
     display: 'flex',

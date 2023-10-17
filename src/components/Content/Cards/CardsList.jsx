@@ -13,7 +13,7 @@ const CardsList = () => {
         <div>
             <Swiper
                 spaceBetween={8}
-                slidesPerView={1.07}
+                slidesPerView={1.2}
                 // onSlideChange={() => console.log('slide change')}
                 // onSwiper={(swiper) => console.log(swiper)}
             >
