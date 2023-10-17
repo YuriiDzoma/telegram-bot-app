@@ -12,11 +12,11 @@
     border-bottom-right-radius: 10px !important;
     border-top-left-radius: 10px !important;
     border-top-right-radius: 10px !important;
+    box-shadow: none !important;
 }
 
 .accordion-item svg {
     color: #fff !important;
-    box-shadow: none !important;
 }
 
 .accordion-item__title {
@@ -50,7 +50,7 @@
 }
 
 .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-    min-height: 32px;
+    min-height: 32px !important;
 }
 
 .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
