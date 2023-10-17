@@ -5,7 +5,7 @@ const card = {
     backgroundColor: '#3E4449',
     marginTop: '16px',
     borderRadius: '16px',
-    border: 'Mixed solid #2F353C',
+    border: '1px solid #2F353C',
     boxShadow: '0px 0px 15px 0px #0C0B0B73',
 
 }
