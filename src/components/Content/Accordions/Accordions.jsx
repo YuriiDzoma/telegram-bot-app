@@ -34,7 +34,7 @@ const Accordions = () => {
                 >
                     <Typography>Сryptocurrency</Typography>
                 </AccordionSummary>
-                <AccordionDetails className='accordion-item__details'>
+                <AccordionDetails className='accordion-item__details' onto>
                     <Typography>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                         malesuada lacus ex, sit amet blandit leo lobortis eget.
