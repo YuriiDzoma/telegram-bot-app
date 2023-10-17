@@ -1,0 +1,7 @@
+.swiperWrapper .swiper .swiper-wrapper {
+    padding: 16px;
+}
+
+.swiper-slide-prev {
+    opacity: 0;
+}

@@ -10,7 +10,8 @@ const Balance = () => {
         telegram.ready();
     }, [])
 
-    const theme = telegram.colorScheme;
+    // const theme = telegram.colorScheme;
+    const theme = 'dark';
 
     const [balance, setBalance] = useState(293);
 

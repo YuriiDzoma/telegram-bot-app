@@ -1,11 +1,11 @@
 .header {
     width: 100%;
-    height: 100%;
+    //height: 100%;
     display: flex;
     /*align-items: center;*/
     /*padding: 0 20px;*/
     justify-content: space-between;
-    margin-bottom: 24px;
+    padding-bottom: 24px;
     background-color: #2F353B
 ;
 }
@@ -57,15 +57,15 @@
     }
 }
 
-.buttonOptionLight {
-    .dots {
-        background-color: #000;
-
-        &:before, &:after {
-            background-color: #000;
-        }
-    }
-}
+//.buttonOptionLight {
+//    .dots {
+//        background-color: #000;
+//
+//        &:before, &:after {
+//            background-color: #000;
+//        }
+//    }
+//}
 
 .walletTitle {
     text-align: center;
@@ -76,9 +76,9 @@
         color: #fff;
     }
 
-    &.light {
-        color: #000;
-    }
+    //&.light {
+    //    color: #000;
+    //}
 }
 
 .username {

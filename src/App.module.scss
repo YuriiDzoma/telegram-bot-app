@@ -11,8 +11,27 @@ button {
   padding: 0;
 }
 
+html {
+  height: 100vh;
+}
+
+body > div {
+  height: 100%;
+}
+
 body {
-  background-color: #3E4449;
+  background-color: #2F353B;
+  height: 100%;
+}
+
+.walletWrapperDark, .pages {
+  height: 100%;
+}
+
+.pages > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .walletWrapperDark {
@@ -29,5 +48,9 @@ body {
 
 .link {
   color: var(--tg-theme-link-color);
+}
+
+.swiper-wrapper {
+  padding: 16px;
 }
 

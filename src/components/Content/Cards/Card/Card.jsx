@@ -1,9 +1,9 @@
 import React from "react";
+import settings from '../../../../assets/icons/Settings.svg'
 
 const card = {
     padding: '16px',
     backgroundColor: '#3E4449',
-    marginTop: '16px',
     borderRadius: '16px',
     border: '1px solid #2F353C',
     boxShadow: '0px 0px 15px 0px #0C0B0B73',
@@ -50,7 +50,7 @@ const CardBox = ({value, number, code, date, type}) => {
     return (
         <div style={card}>
             <div style={cardSettings}>
-                <button style={icon}>O</button>
+                <button style={icon}><img src={settings} alt="settings"/></button>
             </div>
             <div style={cardValue}>
                 <span style={current}>$ {value} </span>

@@ -11,7 +11,8 @@ const Back = () => {
         telegram.ready();
     }, [])
 
-    const theme = telegram.colorScheme;
+    // const theme = telegram.colorScheme;
+    const theme = 'dark';
 
     return (
         <button className={theme === 'dark' ? styles.backDark : styles.backLight}

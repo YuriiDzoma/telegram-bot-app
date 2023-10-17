@@ -29,14 +29,15 @@ const App = () => {
             {/*    setting*/}
             {/*</Link>*/}
 
-
-            <Routes>
-                <Route index element={<Content />} />
-                <Route path={'/replenish/*'} element={<Replenish />} />
-                <Route path={'/limit_orders/*'} element={<LimitOrders />} />
-                <Route path={'/exchange/*'} element={<Exchange />} />
-                <Route path={'/send/*'} element={<Send />} />
-            </Routes>
+            <div className={styles.pages}>
+                <Routes>
+                    <Route index element={<Content />} />
+                    <Route path={'/replenish/*'} element={<Replenish />} />
+                    <Route path={'/limit_orders/*'} element={<LimitOrders />} />
+                    <Route path={'/exchange/*'} element={<Exchange />} />
+                    <Route path={'/send/*'} element={<Send />} />
+                </Routes>
+            </div>
         </div>
     )
 }

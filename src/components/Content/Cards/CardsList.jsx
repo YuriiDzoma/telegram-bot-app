@@ -4,13 +4,14 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {getCards} from "../../../store/selectors";
 import CardBox from "./Card/Card";
+import './CardList.css';
 
 const CardsList = () => {
 
     const allCards = useSelector(getCards);
 
     return (
-        <div>
+        <div className='swiperWrapper'>
             <Swiper
                 spaceBetween={8}
                 slidesPerView={1.2}
