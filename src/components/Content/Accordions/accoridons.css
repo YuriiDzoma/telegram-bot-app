@@ -51,11 +51,9 @@
     background-color: #2F353C !important;
     border-radius: 10px !important;
     margin: 0 !important;
-    padding: 0 !important;
 }
 .accordion-item__details.MuiCollapse-entered {
     margin: 0 !important;
-    padding: 0 !important;
 }
 
 .accordion-item__details p {
