@@ -24,10 +24,10 @@ const App = () => {
         <div className={theme === 'dark' ? styles.walletWrapperDark : styles.walletWrapperLight}>
             <Header theme={theme} />
 
-            {/*<Link className={'link'}*/}
+            {/*<LinkPage className={'link'}*/}
             {/*    to={`form/`}>*/}
             {/*    setting*/}
-            {/*</Link>*/}
+            {/*</LinkPage>*/}
 
             <div className={styles.pages}>
                 <Routes>

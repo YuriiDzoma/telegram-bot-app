@@ -4,7 +4,7 @@ import add from '../../../assets/icons/Add.svg';
 import check from '../../../assets/icons/Check.svg';
 import exchange from '../../../assets/icons/Exchange.svg';
 import send from '../../../assets/icons/Send.svg';
-import LinkPage from "./Link/LinkPage";
+import LinkPage from "./LinkPage/LinkPage";
 
 const Links = () => {
     const pages = [
