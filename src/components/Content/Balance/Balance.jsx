@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import styles from './Balance.module.scss';
-import Button from "../../Button/Button";
+import Button from "../../Сommon/Button/Button";
 import {useTelegram} from "../../../hooks/useTelegram";
 
 const Balance = () => {

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styles from './Header.module.scss'
 import {useTelegram} from "../../hooks/useTelegram";
-import Back from "../Button/Back";
+import Back from "../Сommon/Button/Back";
 import {useLocation} from "react-router";
 
 const Header = ({theme}) => {
@@ -15,27 +15,21 @@ const Header = ({theme}) => {
         switch (location) {
             case '/' :
                 setTitle('Wallet');
-                console.log('Wallet')
                 break;
             case '/replenish/' :
                 setTitle('Replenish');
-                console.log('Replenish')
                 break;
             case '/limit_orders/' :
                 setTitle('Limit Orders');
-                console.log('Limit Orders')
                 break;
             case '/exchange/' :
                 setTitle('Exchange');
-                console.log('Exchange')
                 break;
             case '/send/' :
                 setTitle('Send');
-                console.log('Send')
                 break;
             default:
                 setTitle('Wallet');
-                console.log('Wallet')
                 break;
         }
     },[location])

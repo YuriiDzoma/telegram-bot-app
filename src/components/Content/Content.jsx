@@ -1,4 +1,4 @@
-import './Content.module.scss'
+import styles from './Content.module.scss'
 import React from "react";
 import Balance from "./Balance/Balance";
 import CardsList from "./Cards/CardsList";
@@ -9,9 +9,11 @@ const Content = () => {
     return (
         <div>
             <Balance />
-            <CardsList />
-            <Links />
-            <Accordions />
+            <div className={styles.content}>
+                <CardsList />
+                <Links />
+                <Accordions />
+            </div>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import styles from './button.module.scss'
-import {useTelegram} from "../../hooks/useTelegram";
+import {useTelegram} from "../../../hooks/useTelegram";
 import { useNavigate } from 'react-router-dom';
 
 const Back = () => {
