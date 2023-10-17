@@ -1,7 +1,11 @@
-.swiperWrapper .swiper .swiper-wrapper {
+.swiperWrapper .swiper .swiper-wrapper .swiper-slide {
     padding: 16px;
 }
 
-.swiper-slide-prev {
-    opacity: 0;
+.swiperWrapper .swiper .swiper-wrapper .swiper-slide.swiper-slide-active > div{
+    box-shadow: 0px 0px 15px 0px #0C0B0B73;
+}
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+    margin: 0 !important;
 }

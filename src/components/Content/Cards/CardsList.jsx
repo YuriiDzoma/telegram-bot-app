@@ -13,8 +13,8 @@ const CardsList = () => {
     return (
         <div className='swiperWrapper'>
             <Swiper
-                spaceBetween={8}
-                slidesPerView={1.2}
+                spaceBetween={-24}
+                slidesPerView={1.22}
                 // onSlideChange={() => console.log('slide change')}
                 // onSwiper={(swiper) => console.log(swiper)}
             >

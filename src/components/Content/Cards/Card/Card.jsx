@@ -6,7 +6,7 @@ const card = {
     backgroundColor: '#3E4449',
     borderRadius: '16px',
     border: '1px solid #2F353C',
-    boxShadow: '0px 0px 15px 0px #0C0B0B73',
+    transition: 'all 0.2s'
 
 }
 const cardSettings = {
