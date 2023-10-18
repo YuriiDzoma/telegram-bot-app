@@ -16,7 +16,9 @@ const Links = () => {
     return (
         <div className={styles.navigation}>
             {pages && (
-                pages.map((page) => <LinkPage link={page.url} icon={page.icon} name={page.name} />)
+                pages.map((page, index) => <LinkPage
+                    key={index} link={page.url} icon={page.icon} name={page.name}
+                />)
             )}
         </div>
     )

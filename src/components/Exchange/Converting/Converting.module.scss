@@ -3,6 +3,33 @@
   flex-direction: column;
 }
 
+.inputBox {
+  position: relative;
+  width: 100%;
+
+  &__select {
+    position: absolute !important;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    min-width: auto !important;
+    margin: 0 !important;
+  }
+
+  &__button {
+    border-radius: 0 !important;
+  }
+
+  &__button > div {
+    padding: 10px 32px  !important;
+    min-height: auto !important;
+  }
+
+  &__button > fieldset {
+    border: none !important;
+  }
+}
+
 .converting {
   &__head {
     display: flex;
@@ -20,11 +47,25 @@
   &__input {
     padding: 10px 16px 9px;
     background-color: #2F353B;
-    border: none;
     border-radius: 10px;
     font-size: 14px;
     line-height: 17px;
     color: #fff;
+    width: 100%;
+    border: 1px solid transparent;
+
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus {
+      border: 1px solid #017DEC;
+    }
+
   }
 
   &__balance {
@@ -54,12 +95,18 @@
   &__label {
     margin-bottom: 4px;
   }
+
+  &__send {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .exchangeRate {
   display: flex;
   flex-direction: column;
   row-gap: 4px;
+  margin-bottom: 120px;
 
   &__content {
     padding: 10px 16px 9px;
@@ -98,4 +145,31 @@
   line-height: 17px;
   color: #fff;
   font-weight: 600;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 16px 16px 0 16px;
+
+  &__input {
+    width: 100%;
+    height: 38px;
+    background-color: #3E4449;
+    border: none;
+    border-radius: 10px;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
 }

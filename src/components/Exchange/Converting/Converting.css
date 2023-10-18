@@ -1,0 +1,90 @@
+.MuiMenu-paper, .MuiMenu-list, .MuiMenuItem-gutters {
+    background-color: #2F353B;
+}
+
+.MuiMenu-paper {
+    left: 16px !important;
+    margin-top: 4px;
+    width: calc(100% - 48px);
+}
+
+.MuiMenuItem-gutters {
+    font-size: 14px !important;
+    line-height: 17px !important;
+    font-weight: 400 !important;
+    color: #ffffff !important;
+}
+
+.MuiMenuItem-gutters:hover {
+    background-color: #2F353B !important;
+}
+
+.Mui-selected {
+    color: #017DEC !important;
+    background-color: #2F353B !important;
+    position: relative;
+}
+
+.MuiSelect-select[aria-expanded="false"] {
+    font-size: 14px !important;
+    line-height: 17px !important;
+    font-weight: 400 !important;
+    color: #ffffff;
+    transition: all .2s;
+}
+
+.MuiSelect-select[aria-expanded="true"] {
+    font-size: 14px !important;
+    line-height: 17px !important;
+    font-weight: 400 !important;
+    color: #017DEC;
+}
+
+.MuiSelect-select[aria-expanded="false"]:after,
+.MuiSelect-select[aria-expanded="true"]:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    top: calc(50% - 2px);
+    right: 12px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: translateY(-50%) rotateZ(-45deg);
+    transition: all .2s;
+}
+
+.MuiSelect-select[aria-expanded="true"]:after {
+    top: calc(50%);
+    border-left: 1px solid #017DEC;
+    border-bottom: 1px solid #017DEC;
+    transform: translateY(-50%) rotateZ(135deg);
+}
+
+.Mui-selected:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 6px;
+    border-left: 1px solid #017DEC;
+    border-bottom: 1px solid #017DEC;
+    right: 16px;
+    top: calc(50% - 3px);
+    transform: translateY(-50%) rotateZ(-45deg);
+ }
+
+.MuiSelect-icon {
+    display: none !important;
+}
+
+.parent-input {
+    border: 1px solid transparent;
+}
+
+.parent-input:has(.MuiSelect-iconOpen) {
+    border: 1px solid #017DEC !important;
+    border-radius: 10px;
+}
+

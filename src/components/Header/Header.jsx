@@ -9,8 +9,6 @@ const Header = ({theme}) => {
     const {closeTelegram, user} = useTelegram();
     const location = useLocation().pathname;
 
-    console.log(title);
-
     useEffect(() => {
         switch (location) {
             case '/' :
