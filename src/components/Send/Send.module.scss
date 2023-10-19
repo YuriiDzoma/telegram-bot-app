@@ -1,0 +1,157 @@
+.sendWrapper {
+  background-color: #3E4449;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 16px;
+}
+
+.send {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    padding-left: 16px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  &__select {
+    width: 100% !important;
+    background-color: #2F353C;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    color: #fff !important;
+    border-radius: 10px;
+    margin: 0 0 24px 0 !important;
+  }
+
+  &__networkText {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 300;
+    color: #fff;
+    margin-top: -16px;
+    padding-left: 16px;
+  }
+
+  &__send {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    padding: 9px 16px 8px;
+    background-color: #2F353B;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    width: 100%;
+    border: 1px solid transparent;
+    margin-bottom: 24px;
+
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus {
+      border: 1px solid #017DEC;
+    }
+  }
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+
+  &__button {
+    border-radius: 0 !important;
+  }
+
+  &__button > div {
+    padding: 10px 16px 9px !important;
+    min-height: auto !important;
+
+    &:after {
+      right: 20px !important;
+    }
+  }
+
+  &__button > fieldset {
+    border: none !important;
+  }
+}
+
+.addressBox {
+  position: relative;
+  display: flex;
+
+  &__copy {
+    position: absolute;
+    top: calc(50% - 12px);
+    transform: translateY(-50%);
+    right: 16px;
+  }
+}
+
+.notification, .notificationHide {
+  padding: 16px;
+  background-color: #2E343B;
+  border-radius: 10px;
+  border: 1px solid #017DEC;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  transition: all .2s;
+  opacity: 1;
+  width: calc(100% - 32px);
+  z-index: 9999;
+
+  &__mainText, &__mainTextFailed {
+    padding-left: 32px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    position: relative;
+
+    &:before {
+
+    }
+  }
+
+  &__secondText {
+    padding-left: 32px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  &__closeIcon {
+    pointer-events: none;
+  }
+}
+
+.notificationHide {
+  top: -400px;
+  opacity: 0;
+}

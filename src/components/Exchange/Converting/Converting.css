@@ -55,6 +55,17 @@
     transition: all .2s;
 }
 
+.send-select:has(.MuiSelect-select[aria-expanded="false"]) {
+    border: 1px solid transparent;
+    border-radius: 10px !important;
+    transition: all .2s;
+}
+
+.send-select:has(.MuiSelect-select[aria-expanded="true"]) {
+    border: 1px solid #017DEC;
+    border-radius: 10px !important;
+}
+
 .MuiSelect-select[aria-expanded="true"]:after {
     top: calc(50%);
     border-left: 2px solid #017DEC;

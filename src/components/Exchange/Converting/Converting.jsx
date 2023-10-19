@@ -7,7 +7,6 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import './Converting.css'
 import Button from "../../Сommon/Button/Button";
-import searchIcon from './../../../assets/icons/search.svg';
 
 const Converting = () => {
 
@@ -63,7 +62,7 @@ const Converting = () => {
             </div>
 
             <span className={styles.converting__balance}>Available Balance: $15556</span>
-            <label className={styles.converting__label} htmlFor={`from`}>To</label>
+            <label className={styles.converting__label} htmlFor={`to`}>To</label>
             <div className={styles.inputBox}>
                 <input
                     className={styles.converting__input}

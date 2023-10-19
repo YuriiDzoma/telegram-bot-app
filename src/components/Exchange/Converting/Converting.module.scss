@@ -65,7 +65,6 @@
     &:focus {
       border: 1px solid #017DEC;
     }
-
   }
 
   &__balance {
@@ -97,6 +96,10 @@
   }
 
   &__send {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
   }
