@@ -27,6 +27,12 @@ const Header = () => {
             case '/send/' :
                 setTitle('Send');
                 break;
+            case '/info/' :
+                setTitle('Info');
+                break;
+            case '/settings/' :
+                setTitle('Settings');
+                break;
             default:
                 setTitle('Wallet');
                 break;
@@ -34,7 +40,9 @@ const Header = () => {
     },[location])
 
     const [toggleMenu, setToggleMenu] = useState(false)
-
+    const hidePopup = () => {
+        setToggleMenu(false)
+    }
 
     return (
         <div className={styles.header}>
@@ -43,7 +51,8 @@ const Header = () => {
             <button onClick={() => setToggleMenu(!toggleMenu)} className={styles.buttonOptionDark}>
                 <span className={toggleMenu ? styles.dotsRotate : styles.dots}/>
             </button>
-            <SettingsPopup toggleMenu={toggleMenu} />
+            <SettingsPopup toggleMenu={toggleMenu} hidePopup={hidePopup}/>
+            <button className={!toggleMenu ? styles.header__close : styles.header__closeActive} onClick={hidePopup} />
 
             {/*<Button onClick={closeTelegram}>Закрити</Button>*/}
             {/*<span className={'username'}>{user?.username}</span>*/}

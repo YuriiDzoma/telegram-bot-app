@@ -6,8 +6,27 @@
     /*padding: 0 20px;*/
     justify-content: space-between;
     padding: 16px 16px 24px;
-    background-color: #2F353B
-;
+    background-color: #2F353B;
+    position: relative;
+
+    &__close, &__closeActive {
+        position: fixed;
+        z-index: 3;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: none;
+        background-color: transparent;
+        border: none;
+        cursor: unset;
+    }
+
+    &__closeActive {
+        display: block;
+    }
 }
 
 .buttonOptionDark, .buttonOptionLight {
