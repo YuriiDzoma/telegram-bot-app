@@ -15,6 +15,7 @@ const CardsList = () => {
             <Swiper
                 spaceBetween={-24}
                 slidesPerView={1.22}
+
                 // onSlideChange={() => console.log('slide change')}
                 // onSwiper={(swiper) => console.log(swiper)}
             >

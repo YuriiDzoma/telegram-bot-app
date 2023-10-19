@@ -49,16 +49,16 @@
     height: 6px;
     top: calc(50% - 2px);
     right: 12px;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     transform: translateY(-50%) rotateZ(-45deg);
     transition: all .2s;
 }
 
 .MuiSelect-select[aria-expanded="true"]:after {
     top: calc(50%);
-    border-left: 1px solid #017DEC;
-    border-bottom: 1px solid #017DEC;
+    border-left: 2px solid #017DEC;
+    border-bottom: 2px solid #017DEC;
     transform: translateY(-50%) rotateZ(135deg);
 }
 
@@ -68,8 +68,8 @@
     display: block;
     width: 10px;
     height: 6px;
-    border-left: 1px solid #017DEC;
-    border-bottom: 1px solid #017DEC;
+    border-left: 2px solid #017DEC;
+    border-bottom: 2px solid #017DEC;
     right: 16px;
     top: calc(50% - 3px);
     transform: translateY(-50%) rotateZ(-45deg);

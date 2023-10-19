@@ -3,8 +3,9 @@ import styles from './Header.module.scss'
 import {useTelegram} from "../../hooks/useTelegram";
 import Back from "../Сommon/Button/Back";
 import {useLocation} from "react-router";
+import SettingsPopup from "./Settings/SettingsPopup";
 
-const Header = ({theme}) => {
+const Header = () => {
     const [title, setTitle] = useState('Wallet')
     const {closeTelegram, user} = useTelegram();
     const location = useLocation().pathname;
@@ -32,14 +33,17 @@ const Header = ({theme}) => {
         }
     },[location])
 
+    const [toggleMenu, setToggleMenu] = useState(false)
+
 
     return (
         <div className={styles.header}>
             <Back />
             <p className={styles.walletTitle}>{title}</p>
-            <button className={theme === 'dark' ? styles.buttonOptionDark : styles.buttonOptionLight}>
-                <span className={styles.dots}/>
+            <button onClick={() => setToggleMenu(!toggleMenu)} className={styles.buttonOptionDark}>
+                <span className={toggleMenu ? styles.dotsRotate : styles.dots}/>
             </button>
+            <SettingsPopup toggleMenu={toggleMenu} />
 
             {/*<Button onClick={closeTelegram}>Закрити</Button>*/}
             {/*<span className={'username'}>{user?.username}</span>*/}

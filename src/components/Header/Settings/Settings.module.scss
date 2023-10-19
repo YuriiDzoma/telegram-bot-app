@@ -1,0 +1,30 @@
+.settingsPopup, .settingsPopupShow {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  position: absolute;
+  top: 41px;
+  right: 16px;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #3D4347;
+  border-radius: 10px;
+  border: 1px solid #017DEC;
+  opacity: 0;
+}
+
+.settingsPopupShow {
+  opacity: 1;
+}
+
+.linkShow {
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 1;
+}
+
+.link {
+  opacity: 0;
+}
