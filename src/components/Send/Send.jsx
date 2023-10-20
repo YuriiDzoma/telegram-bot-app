@@ -10,15 +10,13 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import Notification from "./Notification";
 import {useSelector} from "react-redux";
 import {getNetworks} from "../../store/selectors";
-import Network from "./Network";
 
 const Send = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [mainText, setMainText] = useState('');
     const [secondText, setSecondText] = useState('');
     const [success, setSuccess] = useState(true);
-    const [networkValue, setNetworkValue] = useState('Tron (TRC20)');
-    console.log(networkValue);
+    const [networkValue, setNetworkValue] = useState('');
 
     const networks = useSelector(getNetworks);
 
@@ -115,14 +113,7 @@ const Send = () => {
                                 <p className='network-name'>{network.name}</p>
                                 <p className='network-text'>{network.commission}</p>
                                 <p className='network-text'>{network.minAmount}</p>
-                            </div></MenuItem>
-
-                            )}
-                        {/*{networks.map((network, index) =>*/}
-                        {/*    <MenuItem className='networkItem' value={'TRX'}>*/}
-                        {/*        <Network key={index} name={network.name} commission={network.commission}*/}
-                        {/*                 minAmount={network.minAmount} />*/}
-                        {/*    </MenuItem>)}*/}
+                            </div></MenuItem>)}
                     </Select>
                 </FormControl>
                 <div className={styles.send__networkText}>

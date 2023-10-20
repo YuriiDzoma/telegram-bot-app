@@ -1,0 +1,31 @@
+.settingsWrapper {
+  background-color: #3E4449;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 16px;
+}
+
+.language {
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  position: relative;
+  margin-bottom: 16px;
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 6px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    height: 6px;
+    right: 16px;
+    top: calc(50% + 2px);
+    transform: translateY(-50%) rotateZ(45deg) translateX(-50%);
+  }
+}
