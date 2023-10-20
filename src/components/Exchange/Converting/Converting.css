@@ -99,3 +99,13 @@
     border-radius: 10px;
 }
 
+.networkItem {
+    padding: 10px 16px !important;
+    background-color: #3E4449 !important;
+    margin-bottom: 8px !important;
+}
+
+.network-select > div[aria-expanded="false"] .network-text {
+    display: none;
+}
+
