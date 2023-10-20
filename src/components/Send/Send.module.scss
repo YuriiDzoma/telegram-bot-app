@@ -33,7 +33,7 @@
     line-height: 14px;
     font-weight: 300;
     color: #fff;
-    margin-top: -16px;
+    margin: -16px 0 24px;
     padding-left: 16px;
   }
 
@@ -44,6 +44,18 @@
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
+  }
+
+  &__all {
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 0;
+    padding: 24px;
+    border-left: 2px solid #3E4449;
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
   }
 
   &__input {
@@ -128,7 +140,44 @@
     position: relative;
 
     &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid #219653;
+      border-bottom: 2px solid #219653;
+      left: 8px;
+      top: calc(50% - 3px);
+      transform: translateY(-50%) rotateZ(-45deg);
+    }
+  }
 
+  &__mainTextFailed {
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 12px;
+      height: 1px;
+      border: none;
+      background-color: #EB5757;
+      left: 8px;
+      top: calc(50%);
+      transform: translateY(-50%) rotateZ(-45deg);
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 12px;
+      height: 1px;
+      border: none;
+      background-color: #EB5757;
+      left: 8px;
+      top: calc(50%);
+      transform: translateY(-50%) rotateZ(45deg);
     }
   }
 
@@ -154,4 +203,15 @@
 .notificationHide {
   top: -400px;
   opacity: 0;
+}
+
+.amountBox {
+  display: flex;
+  justify-content: space-between;
+
+  &__minimum {
+    font-size: 12px;line-height: 15px;
+    font-weight: 300;
+    color: #fff;
+  }
 }
