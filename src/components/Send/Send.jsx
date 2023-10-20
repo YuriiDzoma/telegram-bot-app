@@ -17,7 +17,8 @@ const Send = () => {
     const [mainText, setMainText] = useState('');
     const [secondText, setSecondText] = useState('');
     const [success, setSuccess] = useState(true);
-    const [networkValue, setNetworkValue] = useState('');
+    const [networkValue, setNetworkValue] = useState('Tron (TRC20)');
+    console.log(networkValue);
 
     const networks = useSelector(getNetworks);
 
@@ -100,7 +101,7 @@ const Send = () => {
                 <label className={styles.send__label} htmlFor={`network`}>Network selection</label>
                 <FormControl className={styles.send__select} sx={{m: 1,}}>
                     <Select
-                        value={values.network}
+                        value={networkValue}
                         onChange={() => setFieldValue('network', networkValue)}
                         displayEmpty
                         id="network"
