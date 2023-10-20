@@ -8,7 +8,7 @@ const ExchangeRate = () => {
             <p className={styles.exchangeRate__text}>Rate at the moment</p>
             <div className={styles.exchangeRate__content}>
                 <p className={styles.exchangeRate__contentValue}>$ 1.00 = 0.00009 BTC</p>
-                <button className={styles.exchangeRate__contentButton}><img src={refresh} alt="refresh"/></button>
+                <button type='button' className={styles.exchangeRate__contentButton}><img src={refresh} alt="refresh"/></button>
             </div>
             <div className={styles.exchangeRate__timeRefresh}>
                 <p>Please kindly note, the price and estimated amounts are indicative and based on last executed trade.
