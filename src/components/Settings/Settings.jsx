@@ -11,8 +11,6 @@ const Settings = () => {
 
     const [authChange, setAuthChange] = useState(false);
 
-    console.log(authChange);
-
     const IOSSwitch = styled((props) => (
         <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
     ))(({theme}) => ({

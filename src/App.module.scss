@@ -22,6 +22,8 @@ body > div {
 body {
   background-color: #2F353B;
   height: 100%;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .walletWrapperDark, .pages {

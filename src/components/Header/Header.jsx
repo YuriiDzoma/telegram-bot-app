@@ -33,6 +33,15 @@ const Header = () => {
             case '/settings/' :
                 setTitle('Settings');
                 break;
+            case '/language/' :
+                setTitle('Language');
+                break;
+            case '/fee_section/' :
+                setTitle('Fee section');
+                break;
+            case '/terms_and_conditions/' :
+                setTitle('Terms and conditions');
+                break;
             default:
                 setTitle('Wallet');
                 break;

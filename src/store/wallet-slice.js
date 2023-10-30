@@ -1,6 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
+    language: 'eng',
     networks: [
         {name: 'Tron (TRC20)', commission: '1.00 USDT (≈ $0.999999)', minAmount: '10 USDT'},
         {name: 'BNB Smart Chain (BEP20)', commission: '0.29 USDT (≈ $0.28999)', minAmount: '6 USDT'},
@@ -33,9 +34,15 @@ const initialState = {
 export const walletSlice = createSlice({
     name:'walletPage',
     initialState,
-    reducers: {}
+    reducers: {
+        setLanguage(state, {payload}) {
+            state.language = payload;
+        }
+    }
 })
 
 export default walletSlice.reducer;
 
-export const {} = walletSlice.actions;
+export const {
+    setLanguage,
+} = walletSlice.actions;
