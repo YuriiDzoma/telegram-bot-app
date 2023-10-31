@@ -12,6 +12,7 @@ import CopyInput from "../Сommon/CopyInput/CopyInput";
 const Send = () => {
     const currency = useSelector(getCurrency);
     const code = 'TFpzUX5aUf6NVW39yhDaphEsoypGwg6';
+    const availableBalance = 2868973;
 
     const [networkValue, setNetworkValue] = useState('');
     const [currentCoin, setCurrentCoin] = useState(currency[0]);
@@ -91,13 +92,13 @@ const Send = () => {
                         value={values.amount}
                         placeholder={''}
                     />
-                    <button onClick={() => setFieldValue('amount', code)} type='button'
+                    <button onClick={() => setFieldValue('amount', availableBalance)} type='button'
                             className={styles.send__all}>All
                     </button>
 
                 </div>
                 <div className={styles.send__networkText}>
-                    <span>Available Balance: ${code}</span>
+                    <span>Available Balance: ${availableBalance}</span>
                 </div>
                 <div className={styles.send__send}>
                     <Button type="submit" disabled={isSubmitting}>

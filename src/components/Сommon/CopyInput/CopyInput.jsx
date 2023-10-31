@@ -13,7 +13,6 @@ const CopyInput = ({code, label}) => {
     const [success, setSuccess] = useState(true);
 
 
-
     const closerPopup = () => {
         setTimeout(() => {
             setShowPopup(false);
