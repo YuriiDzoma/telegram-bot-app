@@ -14,6 +14,7 @@ import Settings from "./components/Settings/Settings";
 import Language from "./components/Settings/Language/Language";
 import TermsAndConditions from "./components/Info/TermsAndConditions/TermsAndConditions";
 import FeeSection from "./components/Info/FeeSection/FeeSection";
+import TwoFactorAuth from "./components/Settings/TwoFactorAuth/TwoFactorAuth";
 
 const App = () => {
     const {telegram, onToggleButton} = useTelegram();
@@ -46,6 +47,7 @@ const App = () => {
                     <Route path={'/language/*'} element={<Language />} />
                     <Route path={'/fee_section/*'} element={<FeeSection />} />
                     <Route path={'/terms_and_conditions/*'} element={<TermsAndConditions />} />
+                    <Route path={'/two_factor_authentication/*'} element={<TwoFactorAuth />} />
                 </Routes>
             </div>
         </div>

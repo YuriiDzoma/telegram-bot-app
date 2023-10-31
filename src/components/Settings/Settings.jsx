@@ -66,11 +66,13 @@ const Settings = () => {
     return (
         <div className={styles.settingsWrapper}>
             <Link className={styles.language} to={'/language/'}>Language</Link>
-            <FormControlLabel
-                onChange={() => setAuthChange(!authChange)}
-                label="Two-factor authentication"
-                control={<IOSSwitch sx={{ m: 1 }} defaultChecked={authChange} />}
-            />
+            <div className={styles.twoFactor}>
+                <Link className={styles.linkAuth} to={'/two_factor_authentication/'}>Two-factor authentication</Link>
+                <FormControlLabel
+                    onChange={() => setAuthChange(!authChange)}
+                    control={<IOSSwitch sx={{ m: 1 }} defaultChecked={authChange} />}
+                />
+            </div>
         </div>
     )
 }

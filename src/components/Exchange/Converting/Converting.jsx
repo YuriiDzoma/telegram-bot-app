@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from './Converting.module.scss'
 import {useFormik} from "formik";
 import ExchangeRate from "./ExchangeRate";
@@ -7,15 +7,19 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import './Converting.css'
 import Button from "../../Сommon/Button/Button";
+import {useSelector} from "react-redux";
+import {getCurrency} from "../../../store/selectors";
 
 const Converting = ({order=false}) => {
-    console.log(order)
+    const currency = useSelector(getCurrency);
+    const [currentCoin, setCurrentCoin] = useState(currency[0]);
+
     const {setSubmitting, handleSubmit, isSubmitting, handleChange, values, resetForm} = useFormik({
         initialValues: {
             from: '',
             to: '',
             from_currency: 'USDT',
-            to_currency: 'BTC',
+            to_currency: '',
             price: '',
         },
 
@@ -54,9 +58,8 @@ const Converting = ({order=false}) => {
                         inputProps={{'aria-label': 'Without label'}}
                         className={styles.inputBox__button}
                     >
-                        <MenuItem value={'USDT'}>USDT</MenuItem>
-                        <MenuItem value={'BTC'}>BTC</MenuItem>
-                        <MenuItem value={'EU'}>EU</MenuItem>
+                        {currency.map((item, index) =>
+                            <MenuItem onClick={() => setCurrentCoin(item)} key={index} value={item.name}>{item.name}</MenuItem>)}
 
                     </Select>
                 </FormControl>
@@ -100,9 +103,8 @@ const Converting = ({order=false}) => {
                         inputProps={{'aria-label': 'Without label'}}
                         className={styles.inputBox__button}
                     >
-                        <MenuItem value={'USDT'}>USDT</MenuItem>
-                        <MenuItem value={'BTC'}>BTC</MenuItem>
-                        <MenuItem value={'EU'}>EU</MenuItem>
+                        {currentCoin.change.map((item, index) =>
+                            <MenuItem key={index} value={item}>{item}</MenuItem>)}
                     </Select>
                 </FormControl>
             </div>

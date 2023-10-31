@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from './Language.module.scss'
 import {useSelector} from "react-redux";
 import {getLanguage} from "../../../store/selectors";
-import {setLanguage} from "../../../store/wallet-slice";
+import {setLanguage} from "../../../store/user-slice";
 import {useAppDispatch} from "../../../hooks/redux";
 
 const Language = () => {

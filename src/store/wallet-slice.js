@@ -1,7 +1,19 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    language: 'eng',
+    currency: [
+        {name: 'USDT', change: ['TRX', 'ETH', 'BTC', 'USDC', 'LTC', 'BNB'], networks: [
+            {name: 'Tether USD trc20', commission: '1.00 USDT (≈ $0.999999)', minAmount: '10 USDT'},
+            {name: 'Tether USD erc20', commission: '0.29 USDT (≈ $0.28999)', minAmount: '6 USDT'}
+            ],
+        },
+        {name: 'USDC', change: ['USDT', 'TRX', 'ETH', 'BTC'], networks: [], },
+        {name: 'BTC', change: ['USDT', 'ETH', 'USDC', 'LTC'], networks: [], },
+        {name: 'ETH', change: ['USDT', 'BTC', 'USDC'], networks: [], },
+        {name: 'LTC', change: ['USDT', 'BTC'], networks: [], },
+        {name: 'BNB', change: ['USDT'], networks: [], },
+        {name: 'TRX', change: ['USDT', 'USDC'], networks: [], },
+        ],
     networks: [
         {name: 'Tron (TRC20)', commission: '1.00 USDT (≈ $0.999999)', minAmount: '10 USDT'},
         {name: 'BNB Smart Chain (BEP20)', commission: '0.29 USDT (≈ $0.28999)', minAmount: '6 USDT'},
@@ -28,21 +40,18 @@ const initialState = {
             cardDate: '11/2024',
             cardType: 'mastercard',
         }
-    ]
+    ],
 };
 
 export const walletSlice = createSlice({
     name:'walletPage',
     initialState,
     reducers: {
-        setLanguage(state, {payload}) {
-            state.language = payload;
-        }
+
     }
 })
 
 export default walletSlice.reducer;
 
 export const {
-    setLanguage,
 } = walletSlice.actions;

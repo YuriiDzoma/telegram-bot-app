@@ -5,41 +5,16 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "../Сommon/Button/Button";
-import copy from '../../assets/icons/copy.svg';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import Notification from "./Notification";
 import {useSelector} from "react-redux";
-import {getNetworks} from "../../store/selectors";
+import {getCurrency} from "../../store/selectors";
+import CopyInput from "../Сommon/CopyInput/CopyInput";
 
 const Send = () => {
-    const [showPopup, setShowPopup] = useState(false);
-    const [mainText, setMainText] = useState('');
-    const [secondText, setSecondText] = useState('');
-    const [success, setSuccess] = useState(true);
+    const currency = useSelector(getCurrency);
+    const code = 'TFpzUX5aUf6NVW39yhDaphEsoypGwg6';
+
     const [networkValue, setNetworkValue] = useState('');
-
-    const networks = useSelector(getNetworks);
-
-    const availableBalance = 28631213;
-
-    const closerPopup = () => {
-        setTimeout(() => {
-            setShowPopup(false);
-            setMainText('');
-            setSecondText('');
-        }, 5000)
-    }
-
-    const copyText = (value) => {
-        if (value && value !== '') {
-            setShowPopup(true);
-            setMainText('Copy Address');
-            setSecondText('Your address was copped');
-            closerPopup();
-        } else {
-            setSuccess(false);
-        }
-    }
+    const [currentCoin, setCurrentCoin] = useState(currency[0]);
 
     const {setSubmitting, handleSubmit, isSubmitting, handleChange, values, resetForm, setFieldValue} = useFormik({
         initialValues: {
@@ -59,8 +34,6 @@ const Send = () => {
     return (
         <div className={styles.sendWrapper}>
             <form className={styles.send} onSubmit={handleSubmit}>
-                <Notification showPopup={showPopup} mainText={mainText}
-                              secondText={secondText} success={success} closerPopup={setShowPopup}/>
                 <label className={styles.send__label} htmlFor={`coin`}>Select a coin</label>
                 <FormControl className={styles.send__select} sx={{m: 1, minWidth: 120}}>
                     <Select
@@ -72,29 +45,13 @@ const Send = () => {
                         inputProps={{'aria-label': 'Without label'}}
                         className={`${styles.inputBox__button} send-select`}
                     >
-                        <MenuItem value={'USDT'}>USDT</MenuItem>
-                        <MenuItem value={'BTC'}>BTC</MenuItem>
-                        <MenuItem value={'EU'}>EU</MenuItem>
+                        {currency.map((item, index) =>
+                            <MenuItem onClick={() => setCurrentCoin(item)} key={index} value={item.name}>{item.name}</MenuItem>)}
 
                     </Select>
                 </FormControl>
 
-                <label className={styles.send__label} htmlFor={`address`}>Address</label>
-                <div className={styles.addressBox}>
-                    <input
-                        className={styles.send__input}
-                        id="address"
-                        name="address"
-                        type="text"
-                        onChange={handleChange}
-                        value={values.address}
-                        placeholder={''}
-                    />
-                    <CopyToClipboard className={styles.addressBox__copy} text={values.address}>
-                        <button onClick={() => copyText(values.address)} type='button'><img src={copy} alt="copy"/>
-                        </button>
-                    </CopyToClipboard>
-                </div>
+                <CopyInput code={code} label={'Address'} />
 
                 <label className={styles.send__label} htmlFor={`network`}>Network selection</label>
                 <FormControl className={styles.send__select} sx={{m: 1,}}>
@@ -107,7 +64,7 @@ const Send = () => {
                         inputProps={{'aria-label': 'Without label'}}
                         className={`${styles.inputBox__button} send-select network-select`}
                     >
-                        {networks.map((network, index) =>
+                        {currentCoin.networks.map((network, index) =>
                             <MenuItem key={index} className='networkItem'
                                       value={network.name} onClick={() => setNetworkValue(network.name)}><div>
                                 <p className='network-name'>{network.name}</p>
@@ -134,13 +91,13 @@ const Send = () => {
                         value={values.amount}
                         placeholder={''}
                     />
-                    <button onClick={() => setFieldValue('amount', availableBalance)} type='button'
+                    <button onClick={() => setFieldValue('amount', code)} type='button'
                             className={styles.send__all}>All
                     </button>
 
                 </div>
                 <div className={styles.send__networkText}>
-                    <span>Available Balance: ${availableBalance}</span>
+                    <span>Available Balance: ${code}</span>
                 </div>
                 <div className={styles.send__send}>
                     <Button type="submit" disabled={isSubmitting}>

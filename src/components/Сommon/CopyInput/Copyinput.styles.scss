@@ -1,0 +1,69 @@
+.send {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    padding-left: 16px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    font-weight: 600;
+    margin: 24px 0 4px;
+    display: block;
+  }
+
+  &__send {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #017DEC;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 60px;
+  }
+
+  &__input {
+    padding: 9px 16px 8px;
+    background-color: #2F353B;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    width: 100%;
+    border: 1px solid transparent;
+    margin-bottom: 24px;
+
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus {
+      border: 1px solid #017DEC;
+    }
+  }
+}
+
+.addressBox {
+  position: relative;
+  display: flex;
+
+  &__copy {
+    position: absolute;
+    top: calc(50% - 12px);
+    transform: translateY(-50%);
+    right: 16px;
+  }
+}

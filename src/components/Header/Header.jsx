@@ -42,6 +42,12 @@ const Header = () => {
             case '/terms_and_conditions/' :
                 setTitle('Terms and conditions');
                 break;
+            case '/two_factor_authentication/' :
+                setTitle('Two-factor authentication');
+                break;
+            case '/two_factor_authentication_connect/' :
+                setTitle('Two-factor authentication');
+                break;
             default:
                 setTitle('Wallet');
                 break;
@@ -62,9 +68,6 @@ const Header = () => {
             </button>
             <SettingsPopup toggleMenu={toggleMenu} hidePopup={hidePopup}/>
             <button className={!toggleMenu ? styles.header__close : styles.header__closeActive} onClick={hidePopup} />
-
-            {/*<Button onClick={closeTelegram}>Закрити</Button>*/}
-            {/*<span className={'username'}>{user?.username}</span>*/}
         </div>
     )
 }
