@@ -84,7 +84,7 @@
 
   &__send button{
     position: absolute;
-    bottom: 80px;
+    bottom: 145px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -162,12 +162,22 @@
     color: #fff;
   }
 
-  &__input {
+  input {
     height: 43px;
     width: 100%;
     background-color: transparent;
     color: #fff;
     border: none;
+    letter-spacing: 9px;
+    font-size: 32px;
+    padding-left: 60px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+
+    &:focus, &:focus-visible {
+      border: none;
+      outline: none;
+    }
   }
 
   &__button {
@@ -178,6 +188,7 @@
     justify-content: center;
     background-color: #017DEC;
     border-radius: 60px;
+    color: #fff;
   }
 
   &__close, &__closeActive {

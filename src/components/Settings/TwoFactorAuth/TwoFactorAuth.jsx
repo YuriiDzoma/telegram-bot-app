@@ -1,14 +1,31 @@
 import React, {useState} from "react";
 import styles from '../Settings.module.scss'
-import {Link} from "react-router-dom";
 import CopyInput from "../../Сommon/CopyInput/CopyInput";
-import Button from "../../Сommon/Button/Button";
+import { InputMask } from '@react-input/mask';
+import border from '../../../assets/icons/border-code.svg'
 
 const TwoFactorAuth = () => {
     const code = 'csak32FAnc4Ssj7a';
     const [showPopup, setShowPopup] = useState(false);
     const hidePopup = () => {
         setShowPopup(false)
+    }
+
+    const [detail, setDetail] = useState(null);
+    const handleMask = (event) => {
+        setDetail(event.detail);
+    };
+    const modify = (input) => {
+        return undefined;
+    };
+
+    const inputBorder = {
+        backgroundImage: `url(${border})`
+    }
+
+    const onSubmit = (value) => {
+        console.log(value)
+        hidePopup();
     }
 
     return (
@@ -33,8 +50,8 @@ const TwoFactorAuth = () => {
             </div>
             <div className={showPopup ? styles.codeBox__active : styles.codeBox}>
                 <span className={styles.codeBox__title}>Enter your code</span>
-                <input className={styles.codeBox__input} type="number" />
-                <button className={styles.codeBox__button} onClick={() => console.log('apply')} type="button" >
+                <InputMask style={inputBorder} mask="_ _ _ _ _ _" replacement="_" modify={modify} onMask={handleMask} />
+                <button className={styles.codeBox__button} onClick={() => onSubmit(detail)} type="button" >
                     <span>Apply</span>
                 </button>
             </div>
