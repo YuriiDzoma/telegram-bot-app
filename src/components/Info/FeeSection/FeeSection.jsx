@@ -5,47 +5,23 @@ import Notification from "../../Send/Notification";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-import {CopyToClipboard} from "react-copy-to-clipboard";
-import copy from "../../../assets/icons/copy.svg";
-import Button from "../../Сommon/Button/Button";
 import {useSelector} from "react-redux";
 import {getNetworks} from "../../../store/selectors";
 
 const FeeSection = () => {
-    const [showPopup, setShowPopup] = useState(false);
-    const [mainText, setMainText] = useState('');
-    const [secondText, setSecondText] = useState('');
-    const [success, setSuccess] = useState(true);
     const [networkValue, setNetworkValue] = useState('');
 
     const networks = useSelector(getNetworks);
 
-    const closerPopup = () => {
-        setTimeout(() => {
-            setShowPopup(false);
-            setMainText('');
-            setSecondText('');
-        }, 5000)
-    }
-
-    const {setSubmitting, handleSubmit, isSubmitting, handleChange, values, resetForm, setFieldValue} = useFormik({
+    const {handleSubmit, handleChange, values, setFieldValue} = useFormik({
         initialValues: {
-            coin: 'USDT',
-            network: 'Tron (TRC20)',
-            amount: 0,
-        },
-
-        onSubmit: (values) => {
-            console.log(values);
-            setSubmitting(false);
-            resetForm();
+            coin: '',
+            network: '',
         },
     });
     return (
         <div className={styles.infoWrapper}>
             <form className={styles.send} onSubmit={handleSubmit}>
-                <Notification showPopup={showPopup} mainText={mainText}
-                              secondText={secondText} success={success} closerPopup={setShowPopup}/>
                 <label className={styles.send__label} htmlFor={`coin`}>Select a coin</label>
                 <FormControl className={styles.send__select} sx={{m: 1, minWidth: 120}}>
                     <Select
@@ -74,6 +50,7 @@ const FeeSection = () => {
                         name="network"
                         inputProps={{'aria-label': 'Without label'}}
                         className={`${styles.inputBox__button} send-select network-select`}
+                        placeholder={'Select a network'}
                     >
                         {networks.map((network, index) =>
                             <MenuItem key={index} className='networkItem'

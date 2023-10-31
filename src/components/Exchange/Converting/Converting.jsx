@@ -8,14 +8,15 @@ import MenuItem from "@mui/material/MenuItem";
 import './Converting.css'
 import Button from "../../Сommon/Button/Button";
 
-const Converting = () => {
-
+const Converting = ({order=false}) => {
+    console.log(order)
     const {setSubmitting, handleSubmit, isSubmitting, handleChange, values, resetForm} = useFormik({
         initialValues: {
             from: '',
             to: '',
             from_currency: 'USDT',
             to_currency: 'BTC',
+            price: '',
         },
 
         onSubmit: (values) => {
@@ -30,7 +31,7 @@ const Converting = () => {
     return (
         <form className={styles.ConvertingWrapper} onSubmit={handleSubmit}>
             <div className={styles.converting__head}>
-                <label className={styles.converting__label} htmlFor={`from`}>From</label>
+                <label className={styles.converting__label} htmlFor={`from`}>{order ? 'Sell' : 'From'}</label>
                 <span className={styles.converting__minimum}>min: 100 USDT</span>
             </div>
             <div className={`${styles.inputBox} parent-input`}>
@@ -62,7 +63,23 @@ const Converting = () => {
             </div>
 
             <span className={styles.converting__balance}>Available Balance: $15556</span>
-            <label className={styles.converting__label} htmlFor={`to`}>To</label>
+
+            {order && (
+                <div className={styles.price}>
+                    <label className={styles.converting__label} htmlFor={`to`}>Price</label>
+                    <input
+                        className={styles.converting__input}
+                        id="price"
+                        name="price"
+                        type="number"
+                        onChange={handleChange}
+                        value={values.price}
+                        placeholder={''}
+                    />
+                </div>
+            )}
+
+            <label className={styles.converting__label} htmlFor={`to`}>{order ? 'Buy' : 'To'}</label>
             <div className={styles.inputBox}>
                 <input
                     className={styles.converting__input}
