@@ -1,5 +1,7 @@
 const telegram = window.Telegram.WebApp;
 
+console.log(telegram.initData);
+
 export function useTelegram() {
     const closeTelegram = () => {
         telegram.close();
