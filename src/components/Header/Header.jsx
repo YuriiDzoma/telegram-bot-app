@@ -62,7 +62,7 @@ const Header = ({telegram}) => {
     return (
         <div className={styles.header}>
             <Back />
-            <span>{telegram.initData}</span>
+            <span>{telegram.initData.id}</span>
             <p className={styles.walletTitle}>{title}</p>
             <button onClick={() => setToggleMenu(!toggleMenu)} className={styles.buttonOptionDark}>
                 <span className={toggleMenu ? styles.dotsRotate : styles.dots}/>
