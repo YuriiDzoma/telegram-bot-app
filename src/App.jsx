@@ -19,8 +19,6 @@ import TwoFactorAuth from "./components/Settings/TwoFactorAuth/TwoFactorAuth";
 const App = () => {
     const {telegram, onToggleButton} = useTelegram();
 
-    // console.log(telegram)
-
     useEffect(() => {
         telegram.ready();
     }, [])
@@ -30,7 +28,7 @@ const App = () => {
 
     return (
         <div className={theme === 'dark' ? styles.walletWrapperDark : styles.walletWrapperLight}>
-            <Header telegram={telegram} />
+            <Header />
 
             {/*<LinkPage className={'link'}*/}
             {/*    to={`form/`}>*/}
