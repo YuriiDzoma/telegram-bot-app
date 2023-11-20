@@ -62,7 +62,6 @@ const Header = () => {
     return (
         <div className={styles.header}>
             <Back />
-            <span>{user?.id}</span>
             <p className={styles.walletTitle}>{title}</p>
             <button onClick={() => setToggleMenu(!toggleMenu)} className={styles.buttonOptionDark}>
                 <span className={toggleMenu ? styles.dotsRotate : styles.dots}/>
