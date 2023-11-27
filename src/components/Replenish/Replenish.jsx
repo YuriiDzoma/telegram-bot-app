@@ -1,10 +1,75 @@
-import React from "react";
+import React, {useState} from "react";
+import {useFormik} from "formik";
+import {useSelector} from "react-redux";
+import {getCurrency} from "../../store/selectors";
+import styles from './Replenish.module.scss';
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
 
 
 const Replenish = () => {
+    const currency = useSelector(getCurrency);
+
+    const [networkValue, setNetworkValue] = useState('');
+    const [currentCoin, setCurrentCoin] = useState(currency[0]);
+
+    const {setSubmitting, handleSubmit, isSubmitting, handleChange, values, resetForm, setFieldValue} = useFormik({
+        initialValues: {
+            coin: 'USDT',
+            network: 'Tron (TRC20)',
+        },
+
+        onSubmit: (values) => {
+            console.log(values);
+            setSubmitting(false);
+            resetForm();
+        },
+    });
+
     return (
-        <div>
-            Replenish
+        <div className={styles.replenishWrapper}>
+            <form className={styles.replenish} onSubmit={handleSubmit}>
+                <label className={styles.replenish__label} htmlFor={`coin`}>Select a coin</label>
+                <FormControl className={styles.replenish__select} sx={{m: 1, minWidth: 120}}>
+                    <Select
+                        value={values.coin}
+                        onChange={handleChange}
+                        displayEmpty
+                        id="coin"
+                        name="coin"
+                        inputProps={{'aria-label': 'Without label'}}
+                        className={`${styles.inputBox__button} send-select`}
+                    >
+                        {currency.map((item, index) =>
+                            <MenuItem onClick={() => setCurrentCoin(item)} key={index}
+                                      value={item.name}>{item.name}</MenuItem>)}
+
+                    </Select>
+                </FormControl>
+                <label className={styles.replenish__label} htmlFor={`network`}>Network selection</label>
+                <FormControl className={styles.replenish__select} sx={{m: 1,}}>
+                    <Select
+                        value={networkValue}
+                        onChange={() => setFieldValue('network', networkValue)}
+                        displayEmpty
+                        id="network"
+                        name="network"
+                        inputProps={{'aria-label': 'Without label'}}
+                        className={`${styles.inputBox__button} send-select network-select`}
+                    >
+                        {currentCoin.networks.map((network, index) =>
+                            <MenuItem key={index} className='networkItem'
+                                      value={network.name} onClick={() => setNetworkValue(network.name)}>
+                                <div>
+                                    <p className='network-name'>{network.name}</p>
+                                    <p className='network-text'>{network.commission}</p>
+                                    <p className='network-text'>{network.minAmount}</p>
+                                </div>
+                            </MenuItem>)}
+                    </Select>
+                </FormControl>
+            </form>
         </div>
     )
 }
