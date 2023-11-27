@@ -20,6 +20,9 @@ const Home = () => {
 
     return (
         <div>
+            {data !== '' && (
+                <p>{data}</p>
+            )}
             <Balance />
             <div className={styles.content}>
                 <CardsList />
