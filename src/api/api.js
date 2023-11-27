@@ -4,13 +4,11 @@ const getUserInfo = async ({id}) => {
     fetch(`${baseUrl}${id}`, {
         method: "GET",
         headers: {
-            "X-RapidAPI-Key": "your-api-key",
-            "X-RapidAPI-Host": "jokes-by-api-ninjas.p.rapidapi.com",
+            Authorization: 'Token af9bbdda4b98828b15e3a37207eed08f02dbd33a',
         },
     })
         .then((response) => console.log(response))
         .then((data) => {
-            setJoke(data[0].joke);
             console.log(data);
         })
         .catch((error) => console.log(error));

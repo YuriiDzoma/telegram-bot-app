@@ -8,12 +8,12 @@ import {useTelegram} from "../../hooks/useTelegram";
 
 const Home = () => {
     const {user} = useTelegram();
+    if (user) {
+        getUserInfo(user.id).then(response => console.log(response))
+    }
 
     return (
         <div>
-            {user && (
-                <p>{user.id}</p>
-            )}
             <Balance />
             <div className={styles.content}>
                 <CardsList />
