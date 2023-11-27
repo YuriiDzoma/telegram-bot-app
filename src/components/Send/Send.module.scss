@@ -15,26 +15,22 @@
     line-height: 17px;
     color: #fff;
     font-weight: 600;
+    display: block;
     margin-bottom: 4px;
   }
 
-  &__select {
-    width: 100% !important;
-    background-color: #2F353C;
-    font-size: 14px !important;
-    line-height: 17px !important;
-    color: #fff !important;
-    border-radius: 10px;
-    margin: 0 !important;
-  }
-
-  &__networkText {
+  &__networkText, &__balanceText {
     font-size: 12px;
     line-height: 14px;
     font-weight: 300;
     color: #fff;
-    margin: -16px 0 24px;
+    //margin: -16px 0 24px;
+    margin-bottom: 24px;
     padding-left: 16px;
+  }
+
+  &__balanceText {
+    margin-top: 8px;
   }
 
   &__send {
@@ -48,9 +44,9 @@
 
   &__all {
     position: absolute;
-    top: calc(50% - 12px);
+    top: calc(50%);
     right: 0;
-    padding: 24px;
+    padding: 10px 24px;
     border-left: 2px solid #3E4449;
     transform: translateY(-50%);
     font-size: 14px;
@@ -67,7 +63,7 @@
     color: #fff;
     width: 100%;
     border: 1px solid transparent;
-    margin-bottom: 24px;
+    //margin-bottom: 24px;
 
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;

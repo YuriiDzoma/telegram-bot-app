@@ -8,6 +8,8 @@ import Button from "../Сommon/Button/Button";
 import {useSelector} from "react-redux";
 import {getCurrency} from "../../store/selectors";
 import CopyInput from "../Сommon/CopyInput/CopyInput";
+import SelectCoin from "../Сommon/Selects/SelectCoin";
+import SelectNetwork from "../Сommon/Selects/SelectNetwork";
 
 const Send = () => {
     const currency = useSelector(getCurrency);
@@ -35,45 +37,15 @@ const Send = () => {
     return (
         <div className={styles.sendWrapper}>
             <form className={styles.send} onSubmit={handleSubmit}>
-                <label className={styles.send__label} htmlFor={`coin`}>Select a coin</label>
-                <FormControl className={styles.send__select} sx={{m: 1, minWidth: 120}}>
-                    <Select
-                        value={values.coin}
-                        onChange={handleChange}
-                        displayEmpty
-                        id="coin"
-                        name="coin"
-                        inputProps={{'aria-label': 'Without label'}}
-                        className={`${styles.inputBox__button} send-select`}
-                    >
-                        {currency.map((item, index) =>
-                            <MenuItem onClick={() => setCurrentCoin(item)} key={index} value={item.name}>{item.name}</MenuItem>)}
-
-                    </Select>
-                </FormControl>
+                <SelectCoin handleChange={handleChange} coin={values.coin}
+                            currency={currency} setCurrentCoin={setCurrentCoin}/>
 
                 <CopyInput code={code} label={'Address'} />
 
-                <label className={styles.send__label} htmlFor={`network`}>Network selection</label>
-                <FormControl className={styles.send__select} sx={{m: 1,}}>
-                    <Select
-                        value={networkValue}
-                        onChange={() => setFieldValue('network', networkValue)}
-                        displayEmpty
-                        id="network"
-                        name="network"
-                        inputProps={{'aria-label': 'Without label'}}
-                        className={`${styles.inputBox__button} send-select network-select`}
-                    >
-                        {currentCoin.networks.map((network, index) =>
-                            <MenuItem key={index} className='networkItem'
-                                      value={network.name} onClick={() => setNetworkValue(network.name)}><div>
-                                <p className='network-name'>{network.name}</p>
-                                <p className='network-text'>{network.commission}</p>
-                                <p className='network-text'>{network.minAmount}</p>
-                            </div></MenuItem>)}
-                    </Select>
-                </FormControl>
+
+                <SelectNetwork currentCoin={currentCoin} networkValue={networkValue}
+                               setFieldValue={setFieldValue} setNetworkValue={setNetworkValue} />
+
                 <div className={styles.send__networkText}>
                     <span>Fee: 15.0 TRX</span>
                 </div>
@@ -97,7 +69,7 @@ const Send = () => {
                     </button>
 
                 </div>
-                <div className={styles.send__networkText}>
+                <div className={styles.send__balanceText}>
                     <span>Available Balance: ${availableBalance}</span>
                 </div>
                 <div className={styles.send__send}>

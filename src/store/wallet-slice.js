@@ -2,23 +2,129 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     currency: [
-        {name: 'USDT', change: ['TRX', 'ETH', 'BTC', 'USDC', 'LTC', 'BNB'], networks: [
-            {name: 'Tether USD trc20', commission: '1.00 USDT (≈ $0.999999)', minAmount: '10 USDT'},
-            {name: 'Tether USD erc20', commission: '0.29 USDT (≈ $0.28999)', minAmount: '6 USDT'}
-            ],
+        {
+            id: 1,
+            token_name: 'USDT',
+            token_code: 'USDT',
+            change: ['TRX', 'ETH', 'BTC', 'USDC', 'LTC', 'BNB'],
+            network: [
+                {
+                    id: 1,
+                    network_name: 'Tether USD trc20',
+                    network_type: 'trc20',
+                    network_commission: '1.00 USDT (≈ $0.999999)',
+                    network_minAmount: '10 USDT',
+                },
+                {
+                    id: 2,
+                    network_name: 'Tether USD erc20',
+                    network_type: 'erc20',
+                    network_commission: '0.29 USDT (≈ $0.28999)',
+                    network_minAmount: '6 USDT',
+                }
+            ]
         },
-        {name: 'USDC', change: ['USDT', 'TRX', 'ETH', 'BTC'], networks: [], },
-        {name: 'BTC', change: ['USDT', 'ETH', 'USDC', 'LTC'], networks: [], },
-        {name: 'ETH', change: ['USDT', 'BTC', 'USDC'], networks: [], },
-        {name: 'LTC', change: ['USDT', 'BTC'], networks: [], },
-        {name: 'BNB', change: ['USDT'], networks: [], },
-        {name: 'TRX', change: ['USDT', 'USDC'], networks: [], },
-        ],
+        {
+            id: 2,
+            token_name: 'USDC',
+            token_code: 'USDC',
+            change: ['USDT', 'TRX', 'ETH', 'BTC'],
+            network: []
+        },
+        {
+            id: 3,
+            token_name: 'BTC',
+            token_code: 'BTC',
+            change: ['USDT', 'ETH', 'USDC', 'LTC'],
+            network: []
+        },
+        {
+            id: 4,
+            token_name: 'ETH',
+            token_code: 'ETH',
+            change: ['USDT', 'BTC', 'USDC'],
+            network: []
+        },
+        {
+            id: 5,
+            token_name: 'LTC',
+            token_code: 'LTC',
+            change: ['USDT', 'BTC'],
+            network: []
+        },
+        {
+            id: 6,
+            token_name: 'BNB',
+            token_code: 'BNB',
+            change: ['USDT'],
+            network: []
+        },
+        {
+            id: 7,
+            token_name: 'TRX',
+            token_code: 'TRX',
+            change: ['USDT', 'USDC'],
+            network: [],
+        },
+    ],
+    replenish: [
+        {
+            id: 1,
+            token_name: 'USDT',
+            token_code: 'USDT',
+            network: [
+                {
+                    id: 1,
+                    network_name: 'Tether USD trc20',
+                    network_type: 'trc20',
+                    network_commission: '1.00 USDT (≈ $0.999999)',
+                    network_minAmount: '10 USDT',
+                },
+                {
+                    id: 1,
+                    network_name: 'Tether USD erc20',
+                    network_type: 'erc20',
+                    network_commission: '0.29 USDT (≈ $0.28999)',
+                    network_minAmount: '6 USDT',
+                }
+            ]
+        },
+        {
+            id: 2,
+            token_name: 'BTC',
+            token_code: 'BTC',
+            network: []
+        },
+        {
+            id: 3,
+            token_name: 'ETH',
+            token_code: 'ETH',
+            network: []
+        },
+        {
+            id: 4,
+            token_name: 'LTC',
+            token_code: 'LTC',
+            network: []
+        },
+        {
+            id: 5,
+            token_name: 'BNB',
+            token_code: 'BNB',
+            network: []
+        },
+        {
+            id: 6,
+            token_name: 'TRX',
+            token_code: 'TRX',
+            network: []
+        },
+    ],
     networks: [
         {name: 'Tron (TRC20)', commission: '1.00 USDT (≈ $0.999999)', minAmount: '10 USDT'},
         {name: 'BNB Smart Chain (BEP20)', commission: '0.29 USDT (≈ $0.28999)', minAmount: '6 USDT'},
     ],
-    cards:[
+    cards: [
         {
             cardValue: 4356,
             cardNumber: '4356 3224 3554 5435',
@@ -44,14 +150,11 @@ const initialState = {
 };
 
 export const walletSlice = createSlice({
-    name:'walletPage',
+    name: 'walletPage',
     initialState,
-    reducers: {
-
-    }
+    reducers: {}
 })
 
 export default walletSlice.reducer;
 
-export const {
-} = walletSlice.actions;
+export const {} = walletSlice.actions;
