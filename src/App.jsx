@@ -37,7 +37,7 @@ const App = () => {
             dispatch(setBalance(response.user_balance));
             dispatch(setTokenName(response.token_name));
             dispatch(setTransactionHistory(response.transaction_history));
-            // dispatch(setCryptocurrency(response.cryptocurrency));
+            dispatch(setCryptocurrency(response.cryptocurrency));
         })
     }, [])
 

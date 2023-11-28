@@ -1,7 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import {getTransactionHistory} from "../../../store/selectors";
-import styles from './Transaction.module.scss'
+import {getTransactionHistory} from "../../../../store/selectors";
 import Transaction from "./Transaction";
 
 
