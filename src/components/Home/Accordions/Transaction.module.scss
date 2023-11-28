@@ -1,0 +1,59 @@
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 13px;
+
+  img {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: #2F353C;
+  }
+
+  &__leftBox {
+    display: flex;
+    column-gap: 6px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1px;
+  }
+
+  &__name {
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 300;
+    color: #CED0D6;
+    display: flex;
+    column-gap: 4px;
+    align-items: center;
+  }
+
+  &__sum, &__sumDeposit {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 600;
+    color: #1ABA2A;
+  }
+
+  &__sum {
+    color: #FD2222;
+  }
+
+  &__dot {
+    width: 3px;
+    height: 3px;
+    background-color: #CED0D6;
+    display: block;
+    border-radius: 50%;
+  }
+}

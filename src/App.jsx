@@ -16,9 +16,12 @@ import TermsAndConditions from "./components/Info/TermsAndConditions/TermsAndCon
 import FeeSection from "./components/Info/FeeSection/FeeSection";
 import TwoFactorAuth from "./components/Settings/TwoFactorAuth/TwoFactorAuth";
 import {getUserInfo} from "./api/api";
+import {useAppDispatch} from "./hooks/redux";
+import {setBalance, setTokenName, setTransactionHistory} from "./store/wallet-slice";
 
 const App = () => {
     const {telegram, onToggleButton} = useTelegram();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         telegram.ready();
@@ -27,6 +30,14 @@ const App = () => {
     // useEffect(() => {
     //     getUserInfo().then((res) => console.log(res))
     // }, [])
+
+    useEffect(() => {
+        getUserInfo().then((response) => {
+            dispatch(setBalance(response.user_balance));
+            dispatch(setTokenName(response.token_name));
+            dispatch(setTransactionHistory(response.transaction_history));
+        })
+    }, [])
 
     // const theme = telegram.colorScheme;
     const theme = 'dark';

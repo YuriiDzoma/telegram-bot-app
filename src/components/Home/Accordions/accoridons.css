@@ -68,3 +68,27 @@
     content: none !important;
 }
 
+.MuiAccordionDetails-root.accordion-item__details {
+    padding: 16px 11px 16px 16px !important;
+}
+
+.MuiTypography-root.MuiTypography-body1 {
+    display: flex !important;
+    flex-direction: column;
+    row-gap: 16px !important;
+    overflow: auto;
+    max-height: 210px;
+}
+
+.MuiTypography-root.MuiTypography-body1::-webkit-scrollbar {
+    width: 4px;
+}
+
+.MuiTypography-root.MuiTypography-body1::-webkit-scrollbar-track {
+    background: #3E4449;
+}
+
+.MuiTypography-root.MuiTypography-body1::-webkit-scrollbar-thumb {
+    background-color: #151718;
+    border-radius: 8px;
+}

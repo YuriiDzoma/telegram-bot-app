@@ -1,6 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
+    balance: {
+        token_name: '',
+        user_balance: '',
+    },
     currency: [
         {
             id: 1,
@@ -147,14 +151,30 @@ const initialState = {
             cardType: 'mastercard',
         }
     ],
+    transactionHistory: []
 };
 
 export const walletSlice = createSlice({
     name: 'walletPage',
     initialState,
-    reducers: {}
+    reducers: {
+        setBalance(state, action) {
+            state.balance.user_balance = action.payload;
+        },
+        setTokenName(state, action) {
+            state.balance.token_name = action.payload;
+        },
+        setTransactionHistory(state, action) {
+            state.transactionHistory = [...action.payload];
+            console.log(action.payload)
+        }
+    }
 })
 
 export default walletSlice.reducer;
 
-export const {} = walletSlice.actions;
+export const {
+    setBalance,
+    setTokenName,
+    setTransactionHistory,
+} = walletSlice.actions;

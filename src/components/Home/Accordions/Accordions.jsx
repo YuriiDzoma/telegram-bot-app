@@ -5,6 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './accoridons.css'
+import TransactionList from "./TransactionList";
 
 const Accordions = () => {
     return (
@@ -52,8 +53,7 @@ const Accordions = () => {
                 </AccordionSummary>
                 <AccordionDetails className='accordion-item__details'>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                       <TransactionList />
                     </Typography>
                 </AccordionDetails>
             </Accordion>
