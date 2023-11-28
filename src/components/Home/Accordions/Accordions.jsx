@@ -9,9 +9,15 @@ import TransactionList from "./TransactionHistory/TransactionList";
 import CryptocurrencyList from "./Сryptocurrency/СryptocurrencyList";
 
 const Accordions = () => {
+    const [expanded, setExpanded] = React.useState('');
+
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
+
     return (
         <div className='accordions'>
-            <Accordion className='accordion-item'>
+            <Accordion className='accordion-item' expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary
                     className='accordion-item__title'
                     expandIcon={<ExpandMoreIcon />}
@@ -27,7 +33,7 @@ const Accordions = () => {
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-            <Accordion className='accordion-item'>
+            <Accordion className='accordion-item' expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                 <AccordionSummary
                     className='accordion-item__title'
                     expandIcon={<ExpandMoreIcon />}
@@ -42,7 +48,7 @@ const Accordions = () => {
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-            <Accordion className='accordion-item'>
+            <Accordion className='accordion-item' expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                 <AccordionSummary
                     className='accordion-item__title'
                     expandIcon={<ExpandMoreIcon />}
