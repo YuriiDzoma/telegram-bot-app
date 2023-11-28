@@ -20,7 +20,7 @@ const Home = () => {
 
     return (
         <div>
-            <p>{data ? data : user?.id}</p>
+            <p>{data ? data.user?.user_name : user?.id}</p>
             <Balance />
             <div className={styles.content}>
                 <CardsList />
