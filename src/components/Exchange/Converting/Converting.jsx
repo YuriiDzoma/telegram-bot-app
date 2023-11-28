@@ -59,7 +59,7 @@ const Converting = ({order=false}) => {
                         className={styles.inputBox__button}
                     >
                         {currency.map((item, index) =>
-                            <MenuItem onClick={() => setCurrentCoin(item)} key={index} value={item.name}>{item.name}</MenuItem>)}
+                            <MenuItem onClick={() => setCurrentCoin(item)} key={index} value={item.token_name}>{item.token_name}</MenuItem>)}
 
                     </Select>
                 </FormControl>

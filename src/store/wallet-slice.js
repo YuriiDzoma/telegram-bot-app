@@ -151,6 +151,7 @@ const initialState = {
             cardType: 'mastercard',
         }
     ],
+    cryptocurrency: [],
     transactionHistory: []
 };
 
@@ -164,9 +165,11 @@ export const walletSlice = createSlice({
         setTokenName(state, action) {
             state.balance.token_name = action.payload;
         },
+        setCryptocurrency(state, action) {
+            state.cryptocurrency = [...action.payload];
+        },
         setTransactionHistory(state, action) {
             state.transactionHistory = [...action.payload];
-            console.log(action.payload)
         }
     }
 })
@@ -176,5 +179,6 @@ export default walletSlice.reducer;
 export const {
     setBalance,
     setTokenName,
+    setCryptocurrency,
     setTransactionHistory,
 } = walletSlice.actions;
