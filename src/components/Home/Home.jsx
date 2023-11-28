@@ -14,15 +14,13 @@ const Home = () => {
     //     getUserInfo(user.id).then(response => console.log(response))
     // }
     useEffect(() => {
-        getUserInfo().then(r => setData.r);
+        getUserInfo().then((response) => setData(response))
     }, [])
 
 
     return (
         <div>
-            {data !== '' && (
-                <p>{data}</p>
-            )}
+            <p>{data ? data : user?.id}</p>
             <Balance />
             <div className={styles.content}>
                 <CardsList />

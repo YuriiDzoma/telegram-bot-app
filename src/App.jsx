@@ -15,6 +15,7 @@ import Language from "./components/Settings/Language/Language";
 import TermsAndConditions from "./components/Info/TermsAndConditions/TermsAndConditions";
 import FeeSection from "./components/Info/FeeSection/FeeSection";
 import TwoFactorAuth from "./components/Settings/TwoFactorAuth/TwoFactorAuth";
+import {getUserInfo} from "./api/api";
 
 const App = () => {
     const {telegram, onToggleButton} = useTelegram();
@@ -22,6 +23,10 @@ const App = () => {
     useEffect(() => {
         telegram.ready();
     }, [])
+
+    // useEffect(() => {
+    //     getUserInfo().then((res) => console.log(res))
+    // }, [])
 
     // const theme = telegram.colorScheme;
     const theme = 'dark';
