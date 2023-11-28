@@ -20,7 +20,7 @@ import {useAppDispatch} from "./hooks/redux";
 import {setBalance, setCryptocurrency, setTokenName, setTransactionHistory} from "./store/wallet-slice";
 
 const App = () => {
-    const {telegram, onToggleButton} = useTelegram();
+    const {telegram, onToggleButton, user} = useTelegram();
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const App = () => {
     // }, [])
 
     useEffect(() => {
-        getUserInfo().then((response) => {
+        getUserInfo(user? user : 463697926).then((response) => {
             console.log(response)
             dispatch(setBalance(response.user_balance));
             dispatch(setTokenName(response.token_name));

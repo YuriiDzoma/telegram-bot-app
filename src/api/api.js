@@ -14,9 +14,9 @@ const baseUrl = 'https://ce-bot.com/api/v2/home/start_web_app/';
 //         .catch((error) => console.log(error));
 // }
 
-export const getUserInfo = async () => {
+export const getUserInfo = async (value) => {
     try {
-        const response = await fetch('https://ce-bot.com/api/v2/home/start_web_app/463697926/', {
+        const response = await fetch(`${baseUrl}${value}/`, {
             method: "GET",
             headers: {
                 Authorization: 'Token af9bbdda4b98828b15e3a37207eed08f02dbd33a',
