@@ -46,7 +46,6 @@ const App = () => {
 
     return (
         <div className={theme === 'dark' ? styles.walletWrapperDark : styles.walletWrapperLight}>
-            <p>{user? user.id : 'none'}</p>
             <Header />
 
             {/*<LinkPage className={'link'}*/}
