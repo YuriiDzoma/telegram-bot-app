@@ -9,8 +9,6 @@ const Transaction = ({icon, token, date_create, amount, table_name}) => {
     const date = arr[0].split('-').reverse().join('.');
     const time = arr[1].slice(0, -3);
 
-    console.log(icon)
-
     return (
         <span className={styles.transaction}>
             <span className={styles.transaction__leftBox}>

@@ -17,7 +17,7 @@ const TransactionList = () => {
                     amount={item.amount}
                     date_create={item.date_create}
                     token={item.token}
-                    table_name={item.table_name}
+                    table_name={item.type}
                 />))}
         </>
     )
