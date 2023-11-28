@@ -3,7 +3,7 @@ import styles from './Transaction.module.scss'
 
 
 const Transaction = ({icon, token, date_create, amount, table_name}) => {
-
+    const iconUrl = `https://ce-bot.com${icon}`
     const deposit = table_name === 'deposit';
     const arr = date_create.split(' ');
     const date = arr[0].split('-').reverse().join('.');
@@ -14,7 +14,7 @@ const Transaction = ({icon, token, date_create, amount, table_name}) => {
     return (
         <span className={styles.transaction}>
             <span className={styles.transaction__leftBox}>
-                <img src={icon} alt=""/>
+                <img src={iconUrl} alt=""/>
                 <span className={styles.transaction__info}>
                     <span className={styles.transaction__name}>{token}</span>
                     <span className={styles.transaction__date}>
