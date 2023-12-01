@@ -1,11 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import styles from './Balance.module.scss';
 import Button from "../../Сommon/Button/Button";
 import {useTelegram} from "../../../hooks/useTelegram";
 import {useSelector} from "react-redux";
 import {getBalance} from "../../../store/selectors";
+import {useNavigate} from "react-router-dom";
 
 const Balance = () => {
+    const navigate = useNavigate();
     const {telegram} = useTelegram();
 
     useEffect(() => {
@@ -23,7 +25,7 @@ const Balance = () => {
                 {CurrentBalance.token_name} {CurrentBalance.user_balance}
             </h2>
             <Button plus={true}>
-                <span>Replenish</span>
+                <span onClick={() => navigate('/replenish/')}>Replenish</span>
             </Button>
         </div>
     )

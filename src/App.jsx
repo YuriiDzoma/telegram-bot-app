@@ -25,11 +25,11 @@ const App = () => {
 
     useEffect(() => {
         telegram.ready();
-    }, [])
+    }, []);
 
-    // useEffect(() => {
-    //     getUserInfo().then((res) => console.log(res))
-    // }, [])
+    useEffect(() => {
+        telegram.expand();
+    }, [])
 
     useEffect(() => {
         getUserInfo(user? user.id : 463697926).then((response) => {
