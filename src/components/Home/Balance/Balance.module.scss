@@ -23,3 +23,38 @@
   font-size: 16px;
   color: #fff;
 }
+
+.buttonPlus {
+  width: 180px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #017DEC;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 60px;
+
+  span {
+    padding-left: 22px;
+    position: relative;
+    color: #fff;
+
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 14px;
+      height: 2px;
+      border-radius: 60px;
+      background-color: #fff;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    &:after {
+      transform: translateY(-50%) rotateZ(90deg);
+    }
+  }
+}

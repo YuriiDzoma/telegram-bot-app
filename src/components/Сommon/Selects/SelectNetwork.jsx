@@ -22,9 +22,9 @@ const SelectNetwork = ({networkValue, setFieldValue, currentCoin, setNetworkValu
                     {currentCoin.network.map((network, index) =>
                         <MenuItem key={index} className='networkItem'
                                   value={network.network_name} onClick={() => setNetworkValue(network.network_name)}><div>
-                            <p className='network-name'>{network.network_name}</p>
-                            <p className='network-text'>{network.network_commission}</p>
-                            <p className='network-text'>{network.network_minAmount}</p>
+                            <p className='network-name'>{network.network_name} <span>({network.network_type})</span></p>
+                            {/*<p className='network-text'>{network.network_commission}</p>*/}
+                            {/*<p className='network-text'>{network.network_minAmount}</p>*/}
                         </div></MenuItem>)}
                 </Select>
             </FormControl>

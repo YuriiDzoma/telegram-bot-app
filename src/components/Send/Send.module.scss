@@ -9,6 +9,12 @@
   display: flex;
   flex-direction: column;
 
+  &__formBox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
   &__label {
     padding-left: 16px;
     font-size: 14px;
@@ -63,7 +69,6 @@
     color: #fff;
     width: 100%;
     border: 1px solid transparent;
-    //margin-bottom: 24px;
 
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;

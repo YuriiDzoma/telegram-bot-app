@@ -24,9 +24,9 @@ const Balance = () => {
             <h2 className={theme === 'dark' ? styles.balance : styles.balanceLight}>
                 {CurrentBalance.token_name} {CurrentBalance.user_balance}
             </h2>
-            <Button plus={true}>
-                <span onClick={() => navigate('/replenish/')}>Replenish</span>
-            </Button>
+            <button onClick={() => navigate('/replenish/')} className={styles.buttonPlus}>
+                <span>Replenish</span>
+            </button>
         </div>
     )
 }

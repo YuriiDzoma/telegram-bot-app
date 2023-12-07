@@ -37,14 +37,18 @@ const Send = () => {
     return (
         <div className={styles.sendWrapper}>
             <form className={styles.send} onSubmit={handleSubmit}>
-                <SelectCoin handleChange={handleChange} coin={values.coin}
-                            currency={currency} setCurrentCoin={setCurrentCoin}/>
+
+                <div className={styles.send__formBox}>
+                    <SelectCoin handleChange={handleChange} coin={values.coin}
+                                currency={currency} setCurrentCoin={setCurrentCoin}/>
+
+                    <SelectNetwork currentCoin={currentCoin} networkValue={networkValue}
+                                   setFieldValue={setFieldValue} setNetworkValue={setNetworkValue} />
+                </div>
+
 
                 <CopyInput code={code} label={'Address'} />
 
-
-                <SelectNetwork currentCoin={currentCoin} networkValue={networkValue}
-                               setFieldValue={setFieldValue} setNetworkValue={setNetworkValue} />
 
                 <div className={styles.send__networkText}>
                     <span>Fee: 15.0 TRX</span>

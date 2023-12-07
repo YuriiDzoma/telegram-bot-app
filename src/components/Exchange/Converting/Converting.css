@@ -116,6 +116,11 @@
     font-weight: 600;
 }
 
+.network-name span {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
 .network-text {
     font-size: 12px;
     line-height: 14px;

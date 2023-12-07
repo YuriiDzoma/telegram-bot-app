@@ -1,20 +1,24 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useFormik} from "formik";
 import {useSelector} from "react-redux";
 import {getReplenish} from "../../store/selectors";
 import styles from './Replenish.module.scss';
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import SelectCoin from "../Сommon/Selects/SelectCoin";
 import SelectNetwork from "../Сommon/Selects/SelectNetwork";
+import {useAppDispatch} from "../../hooks/redux";
+import {getNetworks} from "../../api/api";
 
 
 const Replenish = () => {
+    const dispatch = useAppDispatch();
     const currency = useSelector(getReplenish);
 
     const [networkValue, setNetworkValue] = useState('');
     const [currentCoin, setCurrentCoin] = useState(currency[0]);
+
+    useEffect(() => {
+        getNetworks().then(response => console.log(response))
+    })
 
     const {setSubmitting, handleSubmit, handleChange, values, resetForm, setFieldValue} = useFormik({
         initialValues: {

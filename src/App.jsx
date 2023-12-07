@@ -33,7 +33,6 @@ const App = () => {
 
     useEffect(() => {
         getUserInfo(user? user.id : 463697926).then((response) => {
-            console.log(response)
             dispatch(setBalance(response.user_balance));
             dispatch(setTokenName(response.token_name));
             dispatch(setTransactionHistory(response.transaction_history));
