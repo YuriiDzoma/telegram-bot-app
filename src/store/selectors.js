@@ -1,5 +1,6 @@
 
 export const getBalance = (state) => state.wallet.balance;
+export const getProfileId = (state) => state.wallet.profileId;
 export const getTransactionHistory = (state) => state.wallet.transactionHistory;
 export const getCryptocurrency = (state) => state.wallet.cryptocurrency;
 

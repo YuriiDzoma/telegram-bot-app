@@ -5,7 +5,11 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 
 
-const SelectNetwork = ({networkValue, setFieldValue, currentCoin, setNetworkValue}) => {
+const SelectNetwork = ({networkValue, setFieldValue, currentCoin, setNetworkValue, setNetworkType}) => {
+    const setNetworks = (name, type) => {
+        setNetworkValue(name);
+        setNetworkType(type);
+    }
     return (
         <div>
             <label className={styles.select__label} htmlFor={`network`}>Network selection</label>
@@ -19,13 +23,17 @@ const SelectNetwork = ({networkValue, setFieldValue, currentCoin, setNetworkValu
                     inputProps={{'aria-label': 'Without label'}}
                     className={`${styles.inputBox__button} send-select network-select`}
                 >
-                    {currentCoin.network.map((network, index) =>
+                    {currentCoin && currentCoin.network.map((network, index) =>
                         <MenuItem key={index} className='networkItem'
-                                  value={network.network_name} onClick={() => setNetworkValue(network.network_name)}><div>
-                            <p className='network-name'>{network.network_name} <span>({network.network_type})</span></p>
-                            {/*<p className='network-text'>{network.network_commission}</p>*/}
-                            {/*<p className='network-text'>{network.network_minAmount}</p>*/}
-                        </div></MenuItem>)}
+                                  value={network.network_name}
+                                  onClick={() => setNetworks(network.network_name, network.network_type)}>
+                            <div>
+                                <p className='network-name'>{network.network_name} <span>({network.network_type})</span>
+                                </p>
+                                {/*<p className='network-text'>{network.network_commission}</p>*/}
+                                {/*<p className='network-text'>{network.network_minAmount}</p>*/}
+                            </div>
+                        </MenuItem>)}
                 </Select>
             </FormControl>
         </div>

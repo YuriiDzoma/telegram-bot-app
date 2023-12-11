@@ -1,20 +1,26 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from '../Info.module.scss'
 import {useFormik} from "formik";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import {useSelector} from "react-redux";
-import {getCurrency} from "../../../store/selectors";
+import {getReplenish} from "../../../store/selectors";
 import SelectCoin from "../../Сommon/Selects/SelectCoin";
 import SelectNetwork from "../../Сommon/Selects/SelectNetwork";
+import {useAppDispatch} from "../../../hooks/redux";
+import {getNetworks} from "../../../api/api";
+import {setReplenish} from "../../../store/wallet-slice";
 
 const FeeSection = () => {
-    const currency = useSelector(getCurrency);
+    const dispatch = useAppDispatch();
+    const currency = useSelector(getReplenish);
+
+    console.log(currency)
 
     const [networkValue, setNetworkValue] = useState('');
     const [currentCoin, setCurrentCoin] = useState(currency[0]);
 
+    useEffect(() => {
+        getNetworks().then(response => dispatch(setReplenish(response)));
+    },[])
 
     const {handleSubmit, handleChange, values, setFieldValue} = useFormik({
         initialValues: {
@@ -25,11 +31,14 @@ const FeeSection = () => {
     return (
         <div className={styles.infoWrapper}>
             <form className={styles.send} onSubmit={handleSubmit}>
-                <SelectCoin handleChange={handleChange} coin={values.coin}
-                            currency={currency} setCurrentCoin={setCurrentCoin}/>
-
-                <SelectNetwork currentCoin={currentCoin} networkValue={networkValue}
-                               setFieldValue={setFieldValue} setNetworkValue={setNetworkValue} />
+                {currency && (
+                    <SelectCoin handleChange={handleChange} coin={values.coin}
+                                currency={currency} setCurrentCoin={setCurrentCoin}/>
+                )}
+                {currency && (
+                    <SelectNetwork currentCoin={currentCoin} networkValue={networkValue}
+                                   setFieldValue={setFieldValue} setNetworkValue={setNetworkValue} />
+                )}
             </form>
         </div>
     )

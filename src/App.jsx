@@ -17,7 +17,7 @@ import FeeSection from "./components/Info/FeeSection/FeeSection";
 import TwoFactorAuth from "./components/Settings/TwoFactorAuth/TwoFactorAuth";
 import {getUserInfo} from "./api/api";
 import {useAppDispatch} from "./hooks/redux";
-import {setBalance, setCryptocurrency, setTokenName, setTransactionHistory} from "./store/wallet-slice";
+import {setBalance, setCryptocurrency, setProfileId, setTokenName, setTransactionHistory} from "./store/wallet-slice";
 
 const App = () => {
     const {telegram, onToggleButton, user} = useTelegram();
@@ -33,6 +33,7 @@ const App = () => {
 
     useEffect(() => {
         getUserInfo(user? user.id : 463697926).then((response) => {
+            dispatch(setProfileId(response.user.id));
             dispatch(setBalance(response.user_balance));
             dispatch(setTokenName(response.token_name));
             dispatch(setTransactionHistory(response.transaction_history));

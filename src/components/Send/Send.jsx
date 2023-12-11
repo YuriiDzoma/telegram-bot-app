@@ -1,23 +1,29 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from './Send.module.scss'
 import {useFormik} from "formik";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import Button from "../Сommon/Button/Button";
 import {useSelector} from "react-redux";
-import {getCurrency} from "../../store/selectors";
+import {getReplenish} from "../../store/selectors";
 import CopyInput from "../Сommon/CopyInput/CopyInput";
 import SelectCoin from "../Сommon/Selects/SelectCoin";
 import SelectNetwork from "../Сommon/Selects/SelectNetwork";
+import {getNetworks} from "../../api/api";
+import {setReplenish} from "../../store/wallet-slice";
+import {useAppDispatch} from "../../hooks/redux";
 
 const Send = () => {
-    const currency = useSelector(getCurrency);
+    const dispatch = useAppDispatch();
+    const currency = useSelector(getReplenish);
     const code = 'TFpzUX5aUf6NVW39yhDaphEsoypGwg6';
     const availableBalance = 2868973;
 
     const [networkValue, setNetworkValue] = useState('');
     const [currentCoin, setCurrentCoin] = useState(currency[0]);
+
+    useEffect(() => {
+        getNetworks().then(response => dispatch(setReplenish(response)));
+    },[])
+
 
     const {setSubmitting, handleSubmit, isSubmitting, handleChange, values, resetForm, setFieldValue} = useFormik({
         initialValues: {
@@ -39,16 +45,18 @@ const Send = () => {
             <form className={styles.send} onSubmit={handleSubmit}>
 
                 <div className={styles.send__formBox}>
-                    <SelectCoin handleChange={handleChange} coin={values.coin}
-                                currency={currency} setCurrentCoin={setCurrentCoin}/>
+                    {currency && (
+                        <SelectCoin handleChange={handleChange} coin={values.coin}
+                                    currency={currency} setCurrentCoin={setCurrentCoin}/>
+                    )}
+                    {currency && (
+                        <SelectNetwork currentCoin={currentCoin} networkValue={networkValue}
+                                       setFieldValue={setFieldValue} setNetworkValue={setNetworkValue} />
+                    )}
 
-                    <SelectNetwork currentCoin={currentCoin} networkValue={networkValue}
-                                   setFieldValue={setFieldValue} setNetworkValue={setNetworkValue} />
                 </div>
 
-
                 <CopyInput code={code} label={'Address'} />
-
 
                 <div className={styles.send__networkText}>
                     <span>Fee: 15.0 TRX</span>

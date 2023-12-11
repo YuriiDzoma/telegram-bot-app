@@ -9,6 +9,65 @@
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+
+  &__send {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+
+    button {
+      opacity: 1;
+      transition: 0.15s;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.addressWrapper {
+  max-height: 424px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  //padding-right: 20px;
+
+
+  &__label {
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    padding-left: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+}
+
+.address {
+  background-color: #2F353B;
+  border-radius: 5px;
+  width: 100%;
+  height: 46px;
+  display: flex;
+  font-weight: 300;
+  padding: 6px 16px;
+  column-gap: 8px;
+
+  &__code {
+    word-break: break-all;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+  }
+
+  &__qr {
+    margin-left: 8px;
+  }
 }
 
 

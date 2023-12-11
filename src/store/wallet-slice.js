@@ -1,6 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
+    profileId: null,
     balance: {
         token_name: '',
         user_balance: '',
@@ -71,59 +72,7 @@ const initialState = {
             network: [],
         },
     ],
-    replenish: [
-        {
-            id: 1,
-            token_name: 'USDT',
-            token_code: 'USDT',
-            network: [
-                {
-                    id: 1,
-                    network_name: 'Tether USD trc20',
-                    network_type: 'trc20',
-                    network_commission: '1.00 USDT (≈ $0.999999)',
-                    network_minAmount: '10 USDT',
-                },
-                {
-                    id: 1,
-                    network_name: 'Tether USD erc20',
-                    network_type: 'erc20',
-                    network_commission: '0.29 USDT (≈ $0.28999)',
-                    network_minAmount: '6 USDT',
-                }
-            ]
-        },
-        {
-            id: 2,
-            token_name: 'BTC',
-            token_code: 'BTC',
-            network: []
-        },
-        {
-            id: 3,
-            token_name: 'ETH',
-            token_code: 'ETH',
-            network: []
-        },
-        {
-            id: 4,
-            token_name: 'LTC',
-            token_code: 'LTC',
-            network: []
-        },
-        {
-            id: 5,
-            token_name: 'BNB',
-            token_code: 'BNB',
-            network: []
-        },
-        {
-            id: 6,
-            token_name: 'TRX',
-            token_code: 'TRX',
-            network: []
-        },
-    ],
+    replenish: [],
     networks: [
         {name: 'Tron (TRC20)', commission: '1.00 USDT (≈ $0.999999)', minAmount: '10 USDT'},
         {name: 'BNB Smart Chain (BEP20)', commission: '0.29 USDT (≈ $0.28999)', minAmount: '6 USDT'},
@@ -159,6 +108,9 @@ export const walletSlice = createSlice({
     name: 'walletPage',
     initialState,
     reducers: {
+        setProfileId(state, action) {
+            state.profileId = action.payload
+        },
         setBalance(state, action) {
             state.balance.user_balance = action.payload;
         },
@@ -170,6 +122,9 @@ export const walletSlice = createSlice({
         },
         setTransactionHistory(state, action) {
             state.transactionHistory = [...action.payload];
+        },
+        setReplenish(state, action) {
+            state.replenish = action.payload;
         }
     }
 })
@@ -177,8 +132,10 @@ export const walletSlice = createSlice({
 export default walletSlice.reducer;
 
 export const {
+    setProfileId,
     setBalance,
     setTokenName,
     setCryptocurrency,
     setTransactionHistory,
+    setReplenish,
 } = walletSlice.actions;
