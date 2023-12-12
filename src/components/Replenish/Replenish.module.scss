@@ -84,4 +84,75 @@
   }
 }
 
+.walletPopup {
+  padding: 16px 16px 26px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #3E4449;
+  border-radius: 10px;
+  border: 1px solid #017DEC;
+  z-index: 10;
+  width: calc(100% - 32px);
 
+  &__header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    span {
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+  }
+
+  &__qrCodeBox {
+    width: 206px;
+    height: 206px;
+    background-color: #ced0d6;
+    margin: 0 auto 16px;
+  }
+
+  &__qrCode {
+    width: 206px;
+    height: 206px;
+    object-fit: contain;
+  }
+
+  &__close, &__closeActive {
+    position: fixed;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: unset;
+    opacity: 0.5;
+    background-color: #000;
+  }
+
+  &__closeActive {
+    display: block;
+  }
+
+  label {
+    display: none
+  }
+
+  input {
+    height: 46px;
+  }
+}

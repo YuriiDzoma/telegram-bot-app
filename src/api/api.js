@@ -53,8 +53,7 @@ export const CreateWallet = async (type, telegramId) => {
             },
             body: JSON.stringify({telegram_id: telegramId})
         })
-        // return await response.json();
-        console.log(response);
+        return await response.json();
     } catch (error) {
         return error;
     }
