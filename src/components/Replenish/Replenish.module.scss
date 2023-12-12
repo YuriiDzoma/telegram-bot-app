@@ -27,6 +27,18 @@
       opacity: 0.5;
     }
   }
+
+  &__button {
+    width: 180px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #017DEC;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 60px;
+  }
 }
 
 .addressWrapper {
@@ -56,17 +68,19 @@
   display: flex;
   font-weight: 300;
   padding: 6px 16px;
-  column-gap: 8px;
+  justify-content: space-between;
+
+  &__actions {
+    display: flex;
+    column-gap: 8px;
+  }
 
   &__code {
     word-break: break-all;
     font-size: 14px;
     line-height: 17px;
     color: #fff;
-  }
-
-  &__qr {
-    margin-left: 8px;
+    padding-right: 16px;
   }
 }
 

@@ -6,16 +6,17 @@ import styles from './Replenish.module.scss';
 import SelectCoin from "../Сommon/Selects/SelectCoin";
 import SelectNetwork from "../Сommon/Selects/SelectNetwork";
 import {useAppDispatch} from "../../hooks/redux";
-import {GetAddresses, getNetworks} from "../../api/api";
+import {CreateWallet, GetAddresses, getNetworks} from "../../api/api";
 import {setReplenish} from "../../store/wallet-slice";
 import AddressItem from "./AddressItem";
 import Button from "../Сommon/Button/Button";
+import {useTelegram} from "../../hooks/useTelegram";
 
 const Replenish = () => {
     const dispatch = useAppDispatch();
     const currency = useSelector(getReplenish);
     const profileId = useSelector(getProfileId);
-
+    const {user} = useTelegram();
 
     const [coin, setCoin] = useState(currency[0]);
     const [networkValue, setNetworkValue] = useState('');
@@ -40,16 +41,20 @@ const Replenish = () => {
     }, [networkType])
 
 
-    const {setSubmitting, handleSubmit, handleChange, values, resetForm, setFieldValue} = useFormik({
+    const {setSubmitting, handleSubmit, handleChange, values, isSubmitting, resetForm, setFieldValue} = useFormik({
         initialValues: {
-            coin: 'USDT',
+            coin: '',
             network: '',
         },
 
-        onSubmit: (values) => {
-            console.log(values);
+        onSubmit: () => {
+            if (networkType) {
+                CreateWallet(networkType, user? user.id : 463697926).then(() => console.log('ok'))
+            }
             setSubmitting(false);
-            resetForm();
+            // resetForm();
+            // setNetworkType(null);
+            // setAddresses(null);
         },
     });
 
@@ -73,9 +78,9 @@ const Replenish = () => {
                     </div>
                 )}
                 <div className={styles.replenish__send}>
-                    <Button type="submit" disabled={!networkType}>
-                        <span>Create new wallet</span>
-                    </Button>
+                    <button type='submit' disabled={!networkType || isSubmitting} className={styles.replenish__button}>
+                        Create new wallet
+                    </button>
                 </div>
             </form>
         </div>

@@ -36,11 +36,13 @@ const AddressItem = ({address}) => {
             <Notification showPopup={showPopup} mainText={mainText}
                           secondText={secondText} success={success} closerPopup={setShowPopup}/>
             <p className={styles.address__code}>{address}</p>
-            <button type='button' className={styles.address__qr}><img src={qrIcon} alt=""/></button>
-            <CopyToClipboard className={styles.addressBox__copy} text={address}>
-                <button onClick={() => copyText(address)} type='button'><img src={copy} alt="copy"/>
-                </button>
-            </CopyToClipboard>
+            <div className={styles.address__actions}>
+                <button type='button' className={styles.address__qr}><img src={qrIcon} alt=""/></button>
+                <CopyToClipboard className={styles.addressBox__copy} text={address}>
+                    <button onClick={() => copyText(address)} type='button'><img src={copy} alt="copy"/>
+                    </button>
+                </CopyToClipboard>
+            </div>
         </div>
     )
 }

@@ -43,19 +43,19 @@ export const GetAddresses = async (value, id) => {
     }
 }
 
-// export const GetAddresses = async (value, id) => {
-//     try {
-//         // const response = await fetch(`${domain}wallets/${value}/profile=${id}/
-//         const response = await fetch(`${domain}wallets/${value}/`+ new URLSearchParams({
-//             profile: id,
-//         }), {
-//             method: "GET",
-//             headers: {
-//                 Authorization: 'Token af9bbdda4b98828b15e3a37207eed08f02dbd33a',
-//             },
-//         })
-//         return await response.json();
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+export const CreateWallet = async (type, telegramId) => {
+    try {
+        const response = await fetch(`${domain}wallets/${type}/`, {
+            method: "POST",
+            headers: {
+                Authorization: 'Token af9bbdda4b98828b15e3a37207eed08f02dbd33a',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({telegram_id: telegramId})
+        })
+        // return await response.json();
+        console.log(response);
+    } catch (error) {
+        return error;
+    }
+}
