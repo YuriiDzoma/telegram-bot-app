@@ -6,10 +6,9 @@ import styles from './Replenish.module.scss';
 import SelectCoin from "../Сommon/Selects/SelectCoin";
 import SelectNetwork from "../Сommon/Selects/SelectNetwork";
 import {useAppDispatch} from "../../hooks/redux";
-import {CreateWallet, GetAddresses, getNetworks} from "../../api/api";
+import {createWallet, getAddresses, getNetworks, getQrCode} from "../../api/api";
 import {setReplenish} from "../../store/wallet-slice";
 import AddressItem from "./AddressItem";
-import Button from "../Сommon/Button/Button";
 import {useTelegram} from "../../hooks/useTelegram";
 import QrCodePopup from "./QrCodePopup";
 
@@ -19,18 +18,22 @@ const Replenish = () => {
     const profileId = useSelector(getProfileId);
     const {user} = useTelegram();
 
-    const [coin, setCoin] = useState(currency[0]);
+    const [coin, setCoin] = useState(null);
     const [networkValue, setNetworkValue] = useState('');
     const [networkType, setNetworkType] = useState(null);
     const [addresses, setAddresses] = useState();
     const [qrCode, setQrCode] = useState(null);
     const [walletAddress, setWalletAddress] = useState(null);
-    const [toggleMenu, setToggleMenu] = useState(false);
+    const [showPopup, setShowPopup] = useState(null);
 
     const hidePopup = () => {
-        setToggleMenu(false);
+        setShowPopup(null);
         setWalletAddress(null);
         setQrCode(null);
+        setAddresses(null);
+        setNetworkType(null);
+        setNetworkValue('');
+        setCoin(null);
     }
 
     const setCurrentCoin = (value) => {
@@ -45,12 +48,21 @@ const Replenish = () => {
 
     useEffect(() => {
         if (networkType && profileId) {
-            GetAddresses(networkType, profileId).then(response => setAddresses(response));
+            getAddresses(networkType, profileId).then(response => setAddresses(response));
         }
     }, [networkType])
 
+    const getCode = (address) => {
+        getQrCode(address, networkType).then(response => {
+            console.log(response);
+            setQrCode(response.qr_code);
+            setWalletAddress(response.address);
+            setShowPopup('QR code');
+        })
+    }
 
-    const {setSubmitting, handleSubmit, handleChange, values, isSubmitting, resetForm, setFieldValue} = useFormik({
+
+    const {setSubmitting, handleSubmit, handleChange, values, isSubmitting, setFieldValue} = useFormik({
         initialValues: {
             coin: '',
             network: '',
@@ -58,10 +70,10 @@ const Replenish = () => {
 
         onSubmit: () => {
             if (networkType) {
-                CreateWallet(networkType, user ? user.id : 463697926).then((response) => {
+                createWallet(networkType, user ? user.id : 463697926).then((response) => {
                     setQrCode(response.qr_code);
                     setWalletAddress(response.address);
-                    setToggleMenu(true);
+                    setShowPopup('Wallet created');
                 })
             }
             setSubmitting(false);
@@ -86,7 +98,7 @@ const Replenish = () => {
                     <div>
                         <p className={styles.addressWrapper__label}>Select address</p>
                         <div className={styles.addressWrapper}>
-                            {addresses.map((item, index) => <AddressItem address={item.address} key={index}/>)}
+                            {addresses.map((item, index) => <AddressItem getCode={getCode} address={item.address} key={index}/>)}
                         </div>
                     </div>
                 )}
@@ -97,10 +109,10 @@ const Replenish = () => {
                 </div>
             </form>
             {qrCode && walletAddress && (
-                <QrCodePopup qrCode={qrCode} walletAddress={walletAddress} hidePopup={hidePopup}/>
+                <QrCodePopup qrCode={qrCode} walletAddress={walletAddress} hidePopup={hidePopup} text={showPopup} />
             )}
             {qrCode && walletAddress && (
-                <button className={!toggleMenu ? styles.walletPopup__close : styles.walletPopup__closeActive}
+                <button className={!showPopup ? styles.walletPopup__close : styles.walletPopup__closeActive}
                         onClick={hidePopup}/>
             )}
         </div>

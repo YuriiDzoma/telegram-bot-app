@@ -29,7 +29,7 @@ export const getNetworks = async () => {
     }
 }
 
-export const GetAddresses = async (value, id) => {
+export const getAddresses = async (value, id) => {
     try {
         const response = await fetch(`${domain}wallets/${value}/?profile=${id}`, {
             method: "GET",
@@ -43,7 +43,21 @@ export const GetAddresses = async (value, id) => {
     }
 }
 
-export const CreateWallet = async (type, telegramId) => {
+export const getQrCode = async (address, type) => {
+    try {
+        const response = await fetch(`${domain}qr_code/generate/${type}/${address}/`, {
+            method: "GET",
+            headers: {
+                Authorization: 'Token af9bbdda4b98828b15e3a37207eed08f02dbd33a',
+            }
+        })
+        return await response.json();
+    } catch (error) {
+        return error;
+    }
+}
+
+export const createWallet = async (type, telegramId) => {
     try {
         const response = await fetch(`${domain}wallets/${type}/`, {
             method: "POST",

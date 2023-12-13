@@ -7,7 +7,7 @@ import {CopyToClipboard} from "react-copy-to-clipboard";
 import Notification from "../Send/Notification";
 
 
-const AddressItem = ({address}) => {
+const AddressItem = ({address, getCode}) => {
     const [showPopup, setShowPopup] = useState(false);
     const [mainText, setMainText] = useState('');
     const [secondText, setSecondText] = useState('');
@@ -37,7 +37,9 @@ const AddressItem = ({address}) => {
                           secondText={secondText} success={success} closerPopup={setShowPopup}/>
             <p className={styles.address__code}>{address}</p>
             <div className={styles.address__actions}>
-                <button type='button' className={styles.address__qr}><img src={qrIcon} alt=""/></button>
+                <button type='button' className={styles.address__qr} onClick={() => getCode(address)}>
+                    <img src={qrIcon} alt=""/>
+                </button>
                 <CopyToClipboard className={styles.addressBox__copy} text={address}>
                     <button onClick={() => copyText(address)} type='button'><img src={copy} alt="copy"/>
                     </button>
