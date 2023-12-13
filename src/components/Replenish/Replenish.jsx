@@ -95,7 +95,7 @@ const Replenish = () => {
                 )}
                 {addresses && (
                     <div>
-                        <p className={styles.addressWrapper__label}>Select address</p>
+                        {addresses.length > 0 ? <p className={styles.addressWrapper__label}>Select address</p> : null}
                         <div className={styles.addressWrapper}>
                             {addresses.map((item, index) => <AddressItem getCode={getCode} address={item.address} key={index}/>)}
                         </div>
