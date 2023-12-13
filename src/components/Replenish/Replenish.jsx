@@ -21,7 +21,7 @@ const Replenish = () => {
     const [coin, setCoin] = useState(null);
     const [networkValue, setNetworkValue] = useState('');
     const [networkType, setNetworkType] = useState(null);
-    const [addresses, setAddresses] = useState();
+    const [addresses, setAddresses] = useState(null);
     const [qrCode, setQrCode] = useState(null);
     const [walletAddress, setWalletAddress] = useState(null);
     const [showPopup, setShowPopup] = useState(null);
@@ -33,7 +33,6 @@ const Replenish = () => {
         setAddresses(null);
         setNetworkType(null);
         setNetworkValue('');
-        setCoin(null);
     }
 
     const setCurrentCoin = (value) => {
