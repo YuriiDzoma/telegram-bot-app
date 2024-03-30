@@ -29,6 +29,7 @@ const App = () => {
 
     useEffect(() => {
         telegram.expand();
+        telegram.isClosingConfirmationEnabled = true;
     }, [])
 
     useEffect(() => {

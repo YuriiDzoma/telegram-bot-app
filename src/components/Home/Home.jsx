@@ -14,6 +14,7 @@ const Home = () => {
     return (
         <div>
             <Balance />
+            <p>test</p>
             <div className={styles.content}>
                 <CardsList />
                 <Links />
